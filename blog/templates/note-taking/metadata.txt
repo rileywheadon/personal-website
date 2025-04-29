@@ -1,0 +1,7 @@
+title; How I Take Notes
+created; 2024/07/23
+audience; High school and university students interested in mathematics or CS. 
+certainty; Certain
+importance; Medium
+status; Ongoing
+tags; Obsidian, University

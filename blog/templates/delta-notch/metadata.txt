@@ -1,0 +1,7 @@
+title; Comparing Models of Delta-Notch Signalling
+created; 2025/03/30
+audience; University students interested in mathematical biology.
+certainty; Likely
+importance; Low
+status; Ongoing
+tags; Mathematics, Biology, Modelling, Python

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+	<title>{{ metadata.title }}</title>
+
+	<!-- EB Garamond Display Font -->	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap" rel="stylesheet">
+
+	<!-- Mathjax -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+		type="text/javascript"
+	></script>
+
+	<!-- Custom styles and JS -->
+	<link rel="stylesheet" href="/static/style.css">
+	<script src="/static/ui.js"></script>
+
+</head>
+
+<body>
+
+<div class="container"> 
+
+	{% include "navbar.html" %}
+
+	<main>
+
+		<!-- Include Title -->
+		<h1>{{ metadata.title }}</h1>
+
+		<!-- Include Metadata -->
+		{% include "metadata.html" %} 
+
+		<!-- Include HTML Content -->
+		{{ content|safe }}
+
+		<!-- Include Index table -->
+		{% if index %}
+			{% include "index.html" %}
+		{% endif %}
+
+	</main>
+
+	<footer>
+		{% include "license.html" %}
+	</footer>
+
+</div>
+
+</body>
+
+</html>

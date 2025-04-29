@@ -1,0 +1,7 @@
+title; Curriculum Vitae
+created; 2025/04/26
+audience; Employers
+certainty; Certain
+importance; Medium
+status; Ongoing
+tags; Personal

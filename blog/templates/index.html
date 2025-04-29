@@ -1,0 +1,16 @@
+<table>
+	<tr>
+		<th>Created</th>
+		<th>Title</th>
+		<th>Tags</th>
+	</tr>
+{% for page in index %}
+	<tr>
+		<td>{{page.created}}</td> 
+		<td><a href="/{{ page.endpoint }}">{{ page.title }}</a></td>
+		<td>{{page.tags}}</td> 
+	</tr>
+{% endfor %}
+</table>
+
+

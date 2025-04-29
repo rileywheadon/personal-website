@@ -1,0 +1,7 @@
+title; Home
+created; 2025/04/25
+audience; Everyone
+certainty; Certain
+importance; Low
+status; Ongoing
+tags; Personal

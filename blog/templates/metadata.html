@@ -1,0 +1,31 @@
+
+<div class="metadata-container" onclick="toggle_metadata(this)">
+	<div class="metadata-header">
+		<p class="metadata-header-item">
+			Metadata (<a href="/about#site-design">?</a>)
+		</p>
+		<p class="metadata-header-item" id="metadata-toggle">&plus;</p>
+	</div>
+	<div id="metadata-content">
+
+		<div class="metadata-table">
+			<ul>
+				<li><b>Certainty</b>: <i>{{ metadata.certainty }}</i></li>
+				<li><b>Importance</b>: <i>{{ metadata.importance }}</i></li>
+				<li><b>Status</b>: <i>{{ metadata.status }}</i></li>
+			</ul>
+			<ul>
+				<li><b>Created</b>: <i>{{ metadata.created }}</i></li>
+				<li><b>Modified</b>: <i>{{ metadata.modified }}</i></li>
+			</ul>
+		</div>
+
+		<span><b>Tags</b>: {{ metadata.tags }}</span>
+
+		<br><br>
+
+		<span><b>Audience</b>: {{ metadata.audience }}</span>
+
+	</div>
+</div>
+

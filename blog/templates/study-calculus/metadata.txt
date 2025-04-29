@@ -1,0 +1,7 @@
+title; How to Study Calculus
+created; 2024/07/14
+audience; First year undergraduates and high school students taking calculus I or II.
+certainty; Certain
+importance; Medium
+status; Ongoing
+tags; University, Mathematics

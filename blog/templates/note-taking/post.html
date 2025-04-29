@@ -1,0 +1,232 @@
+<p>Every day I get bombarded with more information than I can possibly
+remember. From lectures to videos to random blog posts I stumble across
+in my spare time, I estimate that my brain alone can recall maybe 10% of
+what I consume. Before I started my knowledge management journey, the
+other 90% would slip away, only to frustrate me later. “I’m pretty sure
+I learned how to do XYZ before, but I forgot and now I have to Google
+it” was an all-too-common experience. This bothered me because I hate
+doing things twice. To keep track of everything I’d learned, I started
+taking a lot of notes. However, this quickly became messy, so I began
+developing a way to stay organized–a <em>knowledge management
+system</em>. After a year of effort, this system has grown to hundreds
+of notes and improved my productivity significantly.</p>
+<p>In this post, I will outline exactly <em>how</em> and <em>why</em> I
+take notes. Obviously, what I do is tailored to my interests and needs,
+and it may not work for everyone. At the very least, I hope reading this
+gives you ideas and motivation for developing your own knowledge
+management system.</p>
+<p><strong>Philosophy</strong></p>
+<p>As I mentioned previously, my goal is to never have to relearn a
+piece of information. Every time I learn a mathematical theorem or
+software library, I create a brief note and jot down any important
+details. The information that goes into my system comes from a variety
+of sources, including lectures, books, blogs, podcasts, and videos. You
+might think that taking notes on a blog is overkill, but hear me out.
+Taking notes forces you to not just understand the media you’re
+consuming, but also summarize it.</p>
+<p>According to Bloom’s taxonomy (<a
+href="https://www.valamis.com/hub/blooms-taxonomy">source</a>), taking
+notes moves you from remember/understand to at least apply. If you’re
+being thorough, note-taking helps you deeply analyze what you’re reading
+and find connections with other ideas. Yes, taking notes on a piece of
+media probably takes 2-3 times longer than just reading it. But this is
+a trade-off I’m willing to make. I’d rather read one book, learn it
+well, and have a list of ideas to revisit later than read three books
+haphazardly in the same time. If I learn something useful, I write it
+down. It’s as simple as that.</p>
+<p>When actually taking notes, I live by the rule <em>one idea, one
+note</em> principle. In practice, this means I don’t make a note for
+each piece of media I consume. Instead, I add ideas from what I’m
+currently reading to related notes I already have. Note length isn’t
+important to me. Some ideas require a lot of justification or context,
+while others can be as short as 2-3 sentences. I do not create separate
+notes for examples or practice problems. Instead, I include them under
+an <code>Examples</code> or <code>Exercises</code> header within an
+existing note. I believe that if a note really represents one idea, its
+title should be short. If I can’t think of a concise title for a note,
+the note probably shouldn’t exist.</p>
+<p><strong>Obsidian</strong></p>
+<p>I’ve found digital note-taking with <a
+href="https://obsidian.md/">Obsidian</a> to be the most effective
+platform for my system. I’m not going to explain how Obsidian works
+(there’s an excellent tutorial <a
+href="https://help.obsidian.md/Home">here</a>), but I will outline why I
+use it. First, Obsidian has an extremely low barrier to entry while also
+being highly customizable and extensible. The plugin ecosystem for
+Obsidian is unmatched; it has solutions for every conceivable use case
+and more. Another advantage of Obsidian is that notes are stored as <a
+href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> files, so
+your notes will remain accessible even if Obsidian were to be
+deprecated. Since notes are stored locally, Obsidian gives you complete
+autonomy over your data, unlike cloud-based software such as <a
+href="https://www.notion.so/">Notion</a> and Google Drive. Finally,
+Obsidian lets me edit my notes using <a
+href="https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/for+Vim+users">vim-like</a>
+key bindings, which makes editing text <em>so</em> much faster. Everyone
+who spends a lot of time on their computer should learn vim, it’s
+legitimately life-changing.</p>
+<p><strong>File Structure</strong></p>
+<p>The layout of my Obsidian vault is roughly based on the <a
+href="https://johnnydecimal.com/">Johnny Decimal</a> system. I like this
+philosophy for arranging my folders because it places a hard limit on
+the amount of depth in my file tree. Why is depth bad? When you create a
+new file in Obsidian, it gets placed in the same folder as the file you
+currently have open. To avoid moving files around manually, it therefore
+makes sense to keep your file tree as shallow as possible. Additionally,
+the breadth of your file tree is no issue since Obsidian allows you to
+search your entire vault at once. You <em>could</em> put every single
+note and image into the root of your vault and Obsidian would work just
+fine. The issues start when you need to get all the files related to a
+certain topic. Then, <a
+href="https://help.obsidian.md/Editing+and+formatting/Tags">tags</a> or
+folders are necessary. In conclusion, I would recommend setting up your
+vault to use as few folders as possible while still maintaining some
+semblance of structure.</p>
+<p>Since my entire vault contains hundreds of notes, it can help to
+create maps of content (MOCs), which are notes whose sole purpose is to
+link to many other notes. I like to prefix my MOCs with the star (⭐️)
+emoji, which conveniently moves them to the top of the file explorer in
+the sidebar. If I need nested MOCs, I’ll prefix the second layer with
+the home (🏠) emoji, which places these notes just beneath the starred
+notes in the file explorer. For an example of what my file structure
+looks like in practice, here’s a snapshot of my “University” folder:</p>
+<pre><code>/30 University
+    /31 UBC
+        Schedule.md
+        Course Planning.md
+        Todo.md
+    /32 MATH 320
+        /32.01 Notes
+            ⭐️ MATH 320.md
+            Least Upper Bound.md
+            ...
+        /32.02 Resources
+            math-320-textbook.pdf
+        /32.03 Assignment 1
+            main.tex
+            ...
+            main.pdf
+    /33 MATH 361
+    ...</code></pre>
+<p><strong>The Fuzzy Finder</strong></p>
+<p>The <strong>Fuzzy Finder</strong> is Obsidian’s mechanism for
+searching a vault, which locates notes by folder and title
+<em>simultaneously</em>. Then, by pressing <code>CMD + ENTER</code>, I
+can effortlessly open the top search result in a new tab. This is
+extremely useful because it allows me to create, delete, and switch
+between notes without having to open a file explorer. Because the fuzzy
+finder displays the file path, it’s possible to differentiate notes by
+both their title <em>and</em> their location. Consider the following
+file tree:</p>
+<pre><code>/MATH-100
+    formula-sheet
+/PHYS-131
+    formula-sheet</code></pre>
+<p>If I search for <code>MATH 100 formula sheet</code>, the fuzzy finder
+will only index the file in the MATH 100 folder, which allows me to have
+many notes with the same title across my vault.</p>
+<h2 id="plugins-and-extensions">Plugins and Extensions</h2>
+<p><strong>LaTeX Suite</strong></p>
+<p>The <a
+href="https://github.com/artisticat1/obsidian-latex-suite">Obsidian
+LaTeX Suite</a> allows me to rapidly typeset <span
+class="math inline">\(\LaTeX\)</span> using a set of customizable
+snippets. I’m not going to elaborate on this plugin’s functionality
+since I wrote a separate guide on it <a
+href="../fast-typesetting/index.qmd">here</a>.</p>
+<p><strong>Advanced Tables</strong></p>
+<p>Obsidian allows you to edit text in two ways–live preview and source
+mode. Since I type a lot of <span class="math inline">\(\LaTeX\)</span>
+in my notes, I prefer using source mode in order to see exactly what I’m
+typing. Unfortunately, this means I can’t use the new <a
+href="https://obsidian.md/changelog/2023-12-26-desktop-v1.5.3/">Table
+Editor</a>, which only works in live preview mode. To get around this
+problem, I use the <a
+href="https://github.com/tgrosinger/advanced-tables-obsidian">Advanced
+Tables</a> plugin, which gives me the functionality I need in source
+mode. Particularly, I am able to:</p>
+<ul class="incremental">
+<li>Use <code>TAB</code> to cycle through cells.</li>
+<li>Bind hotkeys to insert and delete both rows and columns.</li>
+<li>Automatically align table border characters.</li>
+<li>Add basic Excel-like formulas to my tables.</li>
+</ul>
+<p>This plugin only works in source mode, so if you use live preview, I
+would just stick to the built-in table editor.</p>
+<p><strong>Citations</strong></p>
+<p>I’ve doing research since May, and this means dealing with <em>a
+lot</em> of sources. I began using <a
+href="https://www.zotero.org/">Zotero</a> to keep track of my
+references, but I wanted to have access to them within my Obsidian
+vault. The way I added this functionality was with the <a
+href="https://github.com/hans/obsidian-citation-plugin">Citations</a>
+plugin, which automatically imports sources from a Zotero folder. Note
+that the <a href="https://retorque.re/zotero-better-bibtex/">Better
+BibTeX</a> Zotero extension is required for this to work. The Citations
+plugin also allows me to create “literature notes” containing relevant
+metadata from any reference in my Zotero folder.</p>
+<p><em>Update</em> (10/29/24): I am now using the <a
+href="https://github.com/mgmeyers/obsidian-zotero-integration">Zotero
+Integration</a> plugin, although Citations is perfectly fine as
+well.</p>
+<p><strong>Excalidraw</strong></p>
+<p>I do not own a drawing tablet, so it’s nice to have a way to create
+quick, informal diagrams. I’ve found the <a
+href="https://github.com/zsviczian/obsidian-excalidraw-plugin">Excalidraw</a>
+plugin to work great for this use case. My favourite feature of this
+plugin is the ability to seamlessly import drawings into my notes
+without having to worry about exporting images from another piece of
+software.</p>
+<p><strong>Linter</strong></p>
+<p>The <a href="https://github.com/platers/obsidian-linter">Obsidian
+Linter</a> plugin ensures that the markdown files within your vault are
+formatted consistently. It can do things like add a line break above and
+below lists, automatically capitalize headings, and remove consecutive
+empty lines. This normally wouldn’t matter to me but Pandoc (see below)
+can get picky about markdown syntax.</p>
+<p><strong>Pandoc</strong></p>
+<p>The <a href="https://pandoc.org/">Pandoc</a> CLI application has
+grown to be an <em>extremely</em> important part of my workflow. It
+allows me to export markdown files from my Obsidian vault to almost any
+other file type. I find this to be particularly useful when typesetting
+mathematics since the document formatting syntax in <span
+class="math inline">\(\LaTeX\)</span> is just awful. I’ve used Pandoc to
+produce research reports, assignments, and presentations using <a
+href="https://www.overleaf.com/learn/latex/Beamer">Beamer</a>. Of
+course, Pandoc trades control over document formatting for writing
+speed. Personally, this is a sacrifice I’m willing to make. But if you
+need to create professional documents, exporting markdown files via
+Pandoc probably won’t provide enough capabilities.</p>
+<p><em>Update</em> (10/29/24): Exporting markdown files to PDF proved to
+be too cumbersome, so I am back to using <span
+class="math inline">\(\LaTeX\)</span> for more formal writing.</p>
+<p><strong>Quartz</strong></p>
+<p><a href="https://quartz.jzhao.xyz/">Quartz</a> is the incredible
+software I use to turn my Obsidian vault into a “mini-blog”. It
+seamlessly converts Obsidian-style markdown files to webpages and makes
+it easy to add links and attachments. My website doesn’t have all the
+features of a real blog, like comments and feeds. But I can quickly push
+new posts and easily control the layout and style of my website, which
+is all I need for now. If you’re interested in publishing your writing
+quickly and easily, I would recommend giving Quartz a try. It’s even
+simpler than other lightweight blogging software like <a
+href="https://jekyllrb.com/">Jekyll</a>.</p>
+<p><em>Update</em> (08/01/2024): I’ve decided to give <a
+href="https://obsidian.md/publish">Obsidian Publish</a> a try, and I’ve
+found it to be even more straightforward than Quartz. However, Obsidian
+Publish does require subscription ($8 USD/month or $4.80 USD/month with
+the student discount).</p>
+<p><em>Update</em> (10/19/2024): I’ve moved the blog over to <a
+href="https://quarto.org/">Quarto</a> to improve support for code
+snippets.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>My Obsidian vault has grown to be more than just a note-taking
+system. I now use it to make to-do lists, create schedules, journal,
+and, of course, take notes. Using plugins and external software, I’ve
+extended my Obsidian vault to the point where it’s the only software I
+need to produce documents of all kinds. By developing an efficient
+system for note-taking, I’ve made it easier to process the enormous
+amount of information I’m exposed to every day. This has helped me learn
+faster, write better, and study more effectively. If you’re interested
+in trying something similar, the best time to start is now. All you need
+to do is start writing.</p>

@@ -1,0 +1,131 @@
+<h2 id="about-me">About Me</h2>
+<p>I’m Riley, a third year undergraduate student studying mathematics
+and statistics at the University of British Columbia. In addition to my
+studies, I’m passionate about Unix, Vim, and software engineering. I
+also enjoy running, <a href="/library">reading</a>, and playing the
+piano. On the <a
+href="https://en.wikipedia.org/wiki/Big_Five_personality_traits">Big
+Five Personality Traits</a> I am high in openness and conscientiousness,
+roughly average in extroversion and neuroticism, and low in
+agreeableness.</p>
+<p>I have spent much of the last year doing research in mathematical
+biology. From April to December 2024, I worked with <a
+href="https://personal.math.ubc.ca/~cytryn/index.shtml">Dr. Eric
+Cytrynbaum</a> to develop a mathematical model of root growth in <em>A.
+Thaliana</em>. An up-to-date copy of our manuscript can be found <a
+href="https://github.com/rileywheadon/root-modelling/blob/master/paper/main.pdf">here</a>
+and the code for the project can be found <a
+href="https://github.com/rileywheadon/clasp-model">here</a>. I also took
+MATH 462 (Projects in Mathematical Biology), a graduate-level
+mathematical modelling course at UBC. For the final project, my group
+and I explored models of the <a
+href="https://en.wikipedia.org/wiki/Notch_signaling_pathway">Notch
+signalling pathway</a>. I wrote a brief summary of our work <a
+href="/blog">here</a>.</p>
+<p>I got my first exposure to Vim in 2023 after stumbling across an <a
+href="https://castel.dev/post/lecture-notes-1/">excellent blog post</a>
+by Gilles Castel about using Vim to typeset mathematics. After setting
+up a similar system using <a href="/">Vim-bindings in Obsidian</a>, I
+was hooked. I gradually started using Vim for coding and writing, which
+piqued my interest in terminal-based workflows as a whole. One thing led
+to the next, and in January 2025, I booted Linux for the first time on a
+refurbished Thinkpad T480. I strongly believe that software should be
+performant, reliable, and most importantly, <a
+href="https://www.fsf.org/">free</a>. I hope this mentality is reflected
+in my work.</p>
+<h2 id="my-technology">My Technology</h2>
+<p>I am currently running <a href="https://archlinux.org/">archlinux</a>
+on a <a
+href="https://www.thinkwiki.org/wiki/Category:T480#Lenovo_ThinkPad_T480">Thinkpad
+T480</a> (i5-7200U processor, 32GB DDR4 memory) as my primary computer.
+Here’s some of the software I use regularly:</p>
+<ul class="incremental">
+<li><strong>Compositor</strong>: <a
+href="https://github.com/hyprwm/Hyprland">Hyprland</a></li>
+<li><strong>Browser</strong>: Firefox with uBlock Origin</li>
+<li><strong>Terminal</strong>: <a
+href="https://github.com/kovidgoyal/kitty">kitty</a></li>
+<li><strong>Shell</strong>: <code>bash</code></li>
+<li><strong>Terminal Multiplexer</strong>: <a
+href="https://github.com/tmux/tmux/wiki">tmux</a></li>
+<li><strong>Text Editor</strong>: <a
+href="https://www.vim.org/">Vim</a></li>
+<li><strong>Music Player</strong>: <a
+href="https://cmus.github.io/">cmus</a></li>
+<li><strong>PDF Viewer</strong>: <a
+href="https://pwmt.org/projects/zathura/">zathura</a></li>
+<li><strong>Image Viewer</strong>: <a
+href="https://sr.ht/~exec64/imv/">imv</a></li>
+<li><strong>Password Manager</strong>: <a
+href="https://www.passwordstore.org/">pass</a></li>
+</ul>
+<h2 id="site-design">Site Design</h2>
+<p>The design of this site is inspired by <a
+href="https://gwern.net/">gwern.net</a> and <a
+href="https://maggieappleton.com/">maggieappleton.com</a>, among others.
+In particular, I’ve tried my best to design this site as a constantly
+evolving repository of my thoughts, as opposed to a set of polished blog
+posts. This is the core idea of a <a
+href="https://maggieappleton.com/garden-history">Digital Garden</a>. One
+key feature of digital gardens is <em>metadata</em>, which gives readers
+important information about the text they’re about to read. Each page on
+this site contains the following seven metadata tags:</p>
+<ol class="incremental" type="1">
+<li><strong>Created</strong>: The date on which the page was
+created.</li>
+<li><strong>Modified</strong>: The most recent date on which the page
+was modified.</li>
+<li><strong>Topics</strong>: A list of relevant keywords found on the
+page.</li>
+<li><strong>Audience</strong>: A short summary of the intended audience
+or simply “Everyone”.</li>
+<li><strong>Certainty</strong>: My confidence in the post (“unlikely”,
+“likely”, “certain”).</li>
+<li><strong>Importance</strong>: The utility of the post (“low”,
+“medium”, “high”).</li>
+<li><strong>Status</strong>: My evaluation of completeness (“in
+progress”, “in revisions”, “complete”). If a page changes often, it will
+be marked as “ongoing”.</li>
+</ol>
+<h2 id="site-implementation">Site Implementation</h2>
+<p>I’ve built a handful of personal websites over the last two years
+with varying amounts of success. Now, I think that a good personal
+website needs to:</p>
+<ol class="incremental" type="1">
+<li>Showcase my personality and interests.</li>
+<li>Allow me write blog posts in <a
+href="https://commonmark.org/">Markdown</a>.</li>
+<li>Be simple to update and deploy.</li>
+<li>Load <em>extremely</em> quickly.</li>
+<li>Be inexpensive (<span class="math inline">$5</span>/month or
+less).</li>
+<li>Be compatible with as many browsers and devices as possible.</li>
+<li>Provide a space for hosting small personal projects.</li>
+<li>Remain stable for as long as possible (preferably <span
+class="math inline">20+</span> years).</li>
+<li>Use free and open source software.</li>
+</ol>
+<p>This site is built with HTML, CSS, and a touch of vanilla Javascript.
+As a web server, I am using <a
+href="https://flask.palletsprojects.com/en/stable/">Flask</a>, which I
+have found to be simple, minimalist, and powerful. To minimize
+deployment costs, this site is hosted on a single <a
+href="https://www.digitalocean.com/">DigitalOcean</a> droplet using <a
+href="https://nginx.org/en/">nginx</a> as a reverse proxy. In total, it
+costs me just <span class="math inline">$58</span>/year to keep
+everything running. All of the technologies I’ve used to build this site
+have been around for at least <span class="math inline">15</span> years.
+The <a href="https://en.wikipedia.org/wiki/Lindy_effect">Lindy
+Effect</a> says I can expect these technologies to survive for another
+<span class="math inline">15</span> years. In today’s web development
+environment, I’d say that’s pretty good.</p>
+<p>All of the pages for this site are written in Markdown, which I
+compile to HTML using <a href="https://pandoc.org/">Pandoc</a>. The
+styling is done using a single CSS file, which works on the HTML
+generated by Pandoc without modifications. By using a custom Vim
+shortcut, I can compile and preview my blog posts while writing them. I
+know this functionality also exists in static site generators such <a
+href="https://jekyllrb.com/">jekyll</a> and Obsidian plugins like <a
+href="https://quartz.jzhao.xyz/">quartz</a>. However, I’ve found
+building this site to be more rewarding (and also easier!) than using
+these technologies.</p>

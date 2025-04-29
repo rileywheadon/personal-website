@@ -1,0 +1,7 @@
+title; Music
+created; 2025/04/28
+audience; Everyone
+certainty; Uncertain
+importance; Low
+status; Ongoing
+tags; Personal

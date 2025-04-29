@@ -1,0 +1,7 @@
+title; Fast Typesetting with Obsidian LaTeX Suite
+created; 2024/07/19
+audience; Mathematics students interested in digital note-taking.
+certainty; Certain
+importance; Low
+status; Ongoing
+tags; Obsidian, Mathematics

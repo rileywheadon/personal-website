@@ -1,0 +1,428 @@
+<p>This is a follow up to my previous two posts about Obsidian, <a
+href="../note-taking/index.qmd">How I Take Notes</a> and <a
+href="../fast-typesetting/index.qmd">Fast Typesetting with Obsidian
+LaTeX Suite</a>. Today, I take a deep dive into how I’ve used Obsidian
+throughout my undergraduate degree to take notes in my mathematics,
+computer science, and statistics classes. The systems I outline in the
+subsequent sections are specifically tailored for university students in
+a STEM major, although the plugins and techniques I use are applicable
+to a wide variety of knowledge management use cases.</p>
+<p><strong>Prerequisites</strong>: This article assumes proficiency with
+<a href="https://obsidian.md/">Obsidian</a> and familiarity with the <a
+href="https://github.com/artisticat1/obsidian-latex-suite">Obsidian
+LaTeX Suite</a> plugin. Some experience with CSS may be helpful for the
+section on custom callouts.</p>
+<p><strong>Disclaimer</strong>: If you’re just getting started with
+Obsidian, I’d recommend you save this post for later. Your configuration
+is something that should be built based on <em>your</em> needs and
+<em>your</em> preferences, not copied from some random person on the
+internet. The topics I discuss won’t be useful for everyone, and you
+won’t be able to determine what is relevant to you until you are more
+familiar with Obsidian.</p>
+<h2 id="custom-callouts">Custom Callouts</h2>
+<p>A <a
+href="https://help.obsidian.md/Editing+and+formatting/Callouts">Callout</a>
+is one of the ways Obsidian allows you to embed a block of content
+within a note. Callouts support all of the regular Obsidian features,
+including math mode, image embedding, and code snippets. Additionally,
+callouts support folding, just like headers. By default, Obsidian
+callouts have names like “Note”, “Info”, “Todo”, and “Tip”. These
+callouts come in handy occasionally, but they often aren’t the best fit
+for the notes I take as a STEM student. Here’s how I made callouts
+better.</p>
+<figure>
+<img src="/templates/advanced-obsidian/callout-example.png"
+alt="The custom callouts I use for taking notes in my classes. Each callout is colour coded, tailored to a specific purpose, supports folding, and can be created quickly using a keyboard shortcut." />
+<figcaption aria-hidden="true">The custom callouts I use for taking
+notes in my classes. Each callout is colour coded, tailored to a
+specific purpose, supports folding, and can be created quickly using a
+keyboard shortcut.</figcaption>
+</figure>
+<p>Much better, right? In the rest of this section, I’ll provide a
+step-by-step explanation of how to create and use custom callouts in
+Obsidian. In order to create a new callout or change an existing one,
+you’ll need to add a custom CSS file to your Obsidian vault. To do this,
+begin by opening your file manager and navigating to the root of your
+vault. Then, make sure to show hidden folders (<code>CMD SHIFT .</code>
+on MacOS). After doing this, you should see a <code>.obsidian</code>
+folder with a <code>snippets</code> folder inside it (if the snippets
+folder doesn’t exist, just create it). Then, open the
+<code>snippets</code> folder and create a file called
+<code>callouts.css</code>. In order to actually use the callouts you’re
+about to create, you’ll need to open your Obsidian settings, navigate to
+the “Appearance” section, scroll down to “CSS Snippets”, and enable
+<code>callouts.css</code>.</p>
+<p>To create a callout, add the following block of CSS code to
+<code>callouts.css</code>:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.callout</span><span class="ex">[</span><span class="ss">data-callout</span><span class="op">=</span><span class="st">&quot;NAME&quot;</span><span class="ex">]</span> {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* </span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Add CSS attributes to your callout here.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    These can include background colours, borders,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    padding, and anything else your heart desires!</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    */</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>I personally find the callout icons annoying, so I remove them for
+all of my callouts using the line
+<code>.callout-icon {display : none;}</code>. You can also change the
+styles of the <code>.callout-title</code>,
+<code>.callout-title-inner</code> and <code>.callout-fold</code> classes
+to further customize your callout. While doing this customization, its
+helpful to know that Obsidian is technically an instance of a web
+browser, which means you can open the developer console
+(<code>CMD OPTION I</code> on MacOS) to see which CSS classes apply to
+each element. Obsidian also live-reloads the stylesheets in the
+<code>snippets</code> folder, which means you can view changes to your
+callouts without having to restart Obsidian!</p>
+<p>If you want to nerd out and customize Obsidian beyond what I discuss
+here, you might want to look at the complete list of CSS variables <a
+href="https://docs.obsidian.md/Reference/CSS+variables/CSS+variables">here</a>.
+If you don’t want to write your own CSS, I’ve included the styles for my
+“Definition” callout, with documentation, below.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* These styles apply to all of my callouts */</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.callout-icon</span> {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">display</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span> <span class="co">/* Remove the callout icon */</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">.callout-title</span> {</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-top</span><span class="ch">:</span> <span class="dv">0.5</span><span class="dt">em</span><span class="op">;</span> <span class="co">/* Reduce the padding above the title */</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">/* These styles just apply to the &quot;Definition&quot; callout */</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">.callout</span><span class="ex">[</span><span class="ss">data-callout</span><span class="op">=</span><span class="st">&quot;definition&quot;</span><span class="ex">]</span> {</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Create a straight border on the left side of the callout */</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-left</span><span class="ch">:</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">solid</span> <span class="fu">rgb(</span><span class="dv">180</span><span class="op">,</span> <span class="dv">142</span><span class="op">,</span> <span class="dv">173</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Adjust the padding around the content */</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">15</span><span class="dt">px</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">15</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Set the background colour, and set opacity to 5% */</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="fu">rgba(</span><span class="dv">180</span><span class="op">,</span> <span class="dv">142</span><span class="op">,</span> <span class="dv">173</span><span class="op">,</span> <span class="dv">0.05</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">/* Change the colour of the inner title and fold button */</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="fu">.callout</span><span class="ex">[</span><span class="ss">data-callout</span><span class="op">=</span><span class="st">&quot;definition&quot;</span><span class="ex">]</span> <span class="fu">.callout-title-inner</span> {</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="fu">rgb(</span><span class="dv">180</span><span class="op">,</span> <span class="dv">142</span><span class="op">,</span> <span class="dv">173</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="fu">.callout</span><span class="ex">[</span><span class="ss">data-callout</span><span class="op">=</span><span class="st">&quot;definition&quot;</span><span class="ex">]</span> <span class="fu">.callout-fold</span> {</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="fu">rgb(</span><span class="dv">180</span><span class="op">,</span> <span class="dv">142</span><span class="op">,</span> <span class="dv">173</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>Note</strong>: The colours for my callouts come from <a
+href="https://www.nordtheme.com/">Nord</a>, which ensures they match my
+Obsidian theme. I talk more about configuring Obsidian’s appearance in
+the final section.</p>
+<p>At this point, you should be able to open Obsidian and create a new
+custom callout using the following markdown code. If you followed the
+instructions correctly, this callout should have all of the CSS
+attributes you specified in the previous step.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; </span><span class="co">[</span><span class="ot">!NAME</span><span class="co">]</span><span class="at"> Title</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Content</span></span></code></pre></div>
+<p>This is pretty awesome, but we can make callouts <em>even better</em>
+by using plugins to create them in just a few keystrokes. I do this by
+using the <a
+href="https://github.com/artisticat1/obsidian-latex-suite">Obsidian
+LaTeX Suite</a> plugin, which also works for general purpose text
+expansion. If you need a refresher on how to use this plugin, I wrote a
+guide on it <a href="../fast-typesetting/index.qmd">here</a>. As an
+example of how to set up a snippet for creating a custom callout, I have
+included the code for generating my “Theorem” snippet below:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode lua"><code class="sourceCode lua"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">trigger</span><span class="op">:</span> <span class="st">&quot;!thm&quot;</span><span class="op">,</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">replacement</span><span class="op">:</span> <span class="st">&quot;&gt;[!theorem]+ Theorem $0 ($1)</span><span class="sc">\n</span><span class="st">&gt;$2</span><span class="sc">\n</span><span class="st">&gt;</span><span class="sc">\n</span><span class="st">&gt;&lt;span style=</span><span class="sc">\&quot;</span><span class="st">color: rgb(235, 203, 139)</span><span class="sc">\&quot;</span><span class="st">&gt;&lt;b&gt;Proof&lt;/b&gt;&lt;/span&gt;. $3&quot;</span><span class="op">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">options</span><span class="op">:</span> <span class="st">&quot;tA&quot;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="op">},</span></span></code></pre></div>
+<p>I activate this snippet by typing the trigger phrase
+<code>!thm</code>. The options <code>tA</code> means that this snippet
+activates in <code>t</code>ext mode (as opposed to math mode) and
+<code>A</code>utocompletes without me having to press <code>TAB</code>.
+In the replacement, I use <code>$0</code>, <code>$1</code>,
+<code>$2</code>, and <code>$3</code> to place tabstops, which allow me
+to quickly jump from one location in the callout to the next. Adding
+<code>\n</code> inserts a new line. The replacement ends up being quite
+long because I have to manually embed the colour of “Proof” subheader in
+the snippet using a <code>&lt;span&gt;</code> It would be nice if there
+was a way to create a custom callout with additional HTML – if anyone
+knows how to do this please let me know.</p>
+<p>That’s all for this section. Like many of the other plugins and
+techniques I discuss in this post, Obsidian <span
+class="math inline">\(\LaTeX\)</span> Suite and custom CSS snippets are
+general purpose tools for improving your note taking workflows, and have
+<em>tons</em> of applications beyond what I’ve shown here.</p>
+<h2 id="templater-dataview">Templater &amp; Dataview</h2>
+<p>Custom callouts are a good party trick, but how do they fit into a
+bigger system? I see my callouts as the building blocks for
+<em>concepts</em>, which represent a complete idea. As an example,
+consider the <a href="https://en.wikipedia.org/wiki/Chain_rule">Chain
+Rule</a> as taught in a typical Calculus I course. My note on this
+concept consists of a definition callout, followed by a theorem callout,
+followed by a couple of example callouts. All of these callouts are
+stored in a single note, titled “Chain Rule”. The other type of note I
+keep are <em>exercises</em>, which contain textbook questions or
+assignment problems that I’ve solved myself. I currently have hundreds
+of these notes, which can make organizing them a daunting task. As my
+vault has grown larger, I’ve actually abandoned the concept of
+folder-based organization entirely in favor of more organic solutions
+that use metadata and bidirectional linking. The <a
+href="https://github.com/SilentVoid13/Templater">Templater</a> and <a
+href="https://blacksmithgu.github.io/obsidian-dataview/">Dataview</a>
+plugins are essential to this workflow.</p>
+<p>Obsidian stores metadata in an optional YAML header within each file.
+Within this header, you can define any number of <a
+href="https://help.obsidian.md/Editing+and+formatting/Properties">properties</a>
+in a wide variety of data formats like words, numbers, and lists. I use
+metadata to store the following information in my <em>concept</em> and
+<em>exercise</em> notes respectively:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">concept</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">course</span><span class="kw">:</span><span class="at"> ...</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">subject</span><span class="kw">:</span><span class="at"> ...</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">topics</span><span class="kw">:</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ...</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ...</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ...</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">exercise</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span><span class="kw">:</span><span class="at"> ...</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">chapter</span><span class="kw">:</span><span class="at"> ...</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">number</span><span class="kw">:</span><span class="at"> ...</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<p>Lets breakdown exactly how these YAML headers work. Adding
+<code>concept: true</code> and <code>exercise: true</code> make it easy
+to search my vault for all concepts or exercises respectively. In each
+concept note, I store the most recent <code>course</code> in which I
+studied the concept, which comes in handy when preparing for exams. The
+<code>subject</code> and <code>topics</code> fields allow me to list
+additional keywords which make it easier to index the note later. In
+each exercise note I store the <code>source</code> of the exercise
+(i.e. the textbook it came from) as well as its <code>chapter</code> and
+<code>number</code>, if they exist.</p>
+<p>Now that we’ve done all of this hard work adding metadata to our
+notes, we can reap the benefits by using the <a
+href="https://blacksmithgu.github.io/obsidian-dataview/">Dataview</a>
+plugin to query our entire vault. I’m not going to go into detail about
+how to write dataview queries, since plenty of good documentation exists
+already. I will however give examples of some of the queries I am
+currently using in my vault as well as a brief description of what they
+do and how they work.</p>
+<p><strong>1</strong>: Create a table of all notes with the subject
+“Statistics”, then sort by the time I created the note so that the
+newest concepts appear the top.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">TABLE</span> <span class="kw">join</span>(topics, <span class="ot">&quot;, &quot;</span>) <span class="kw">AS</span> Topics</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> concept <span class="kw">AND</span> subject <span class="op">=</span> <span class="ot">&quot;Statistics&quot;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SORT</span> <span class="kw">file</span>.ctime <span class="kw">DESC</span></span></code></pre></div>
+<p><strong>2</strong>: Create a list of all exercises that contain a
+link to this concept note.</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">LIST</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> [[]]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> exercise</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">SORT</span> <span class="kw">source</span>, chapter, <span class="dt">number</span></span></code></pre></div>
+<p><strong>3</strong>: Create a table of all concepts from the course
+“MATH302” that were created in the last month (to study for a quiz, for
+example).</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">TABLE</span> <span class="kw">join</span>(topics, <span class="ot">&quot;, &quot;</span>) <span class="kw">AS</span> Topics</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> concept <span class="kw">AND</span> course <span class="op">=</span> <span class="ot">&quot;MATH302&quot;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="kw">file</span>.ctime <span class="op">&lt;=</span> <span class="dt">date</span>(today) <span class="op">-</span> dur(<span class="dv">1</span> <span class="dt">month</span>)</span></code></pre></div>
+<p>This is all lots of fun, but creating metadata can be a lot of work.
+The <a
+href="https://silentvoid13.github.io/Templater/introduction.html">Templater</a>
+plugin makes things faster by allowing us to create custom templates for
+the concept and exercise notes. In case you were wondering, Templater
+can do <em>way</em> more than this by allowing you to execute arbitrary
+Typescript code from within your vault, but we’ll just focus on the
+templates for now. Creating templates is really simple; just define a
+<code>Templates</code> folder in the Templater settings menu and then
+create a new note within this folder. Within these templates you can
+include any amount of markdown content and YAML metadata. Additionally,
+you can use the <a
+href="https://silentvoid13.github.io/Templater/internal-functions/overview.html">variable</a>
+<code>&lt;% tp.file.cursor() %&gt;</code> to add a tabstop. Once your
+happy with your templates, I would advise you to create hotkeys for
+importing them, which can be done from the Templater settings.</p>
+<p>For your inspiration, I have included the templates for my concept
+and exercise notes below. I populate my concept notes with a dataview
+query for finding all exercises that involve this concept (see above),
+as well as a YAML header. Exercise notes also include a YAML header,
+with the source of the exercise automatically inferred from the title of
+the note.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">concept:</span><span class="co"> true</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="an">course:</span><span class="co"> &lt;% tp.file.cursor(1) %&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="an">subject:</span><span class="co"> &lt;% tp.file.cursor(2) %&gt;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="an">topics:</span><span class="co"> &lt;% tp.file.cursor(3) %&gt;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>&lt;% tp.file.cursor(4) %&gt;</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="in">```dataview</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="in">LIST</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="in">FROM [[]]</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="in">WHERE exercise</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="in">SORT source, chapter, number</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="an">exercise:</span><span class="co"> true</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="an">source:</span><span class="co"> &lt;% tp.file.title.split(&quot; &quot;)[0] %&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="an">chapter:</span><span class="co"> &lt;% tp.file.cursor(1) %&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="an">number:</span><span class="co"> &lt;% tp.file.cursor(2) %&gt;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>&lt;% tp.file.cursor(3) %&gt;</span></code></pre></div>
+<p>That’s all for this section. There is so much more to Dataview and
+Templater than I’ve shown here. If you’re interested in integrating
+these plugins into your vault, I’d recommend you start by reading
+through their excellent documentation.</p>
+<h2 id="excalidraw">Excalidraw</h2>
+<p>An iPad, Apple Pencil and <a
+href="https://www.goodnotes.com/">Goodnotes</a> seems to be the standard
+way of taking notes for many of my classmates. This method has its
+benefits and drawbacks when compared to Obsidian. The biggest drawback
+is that writing text by hand is slow – about five times slower for me,
+but your mileage may vary. However, Goodnotes makes it super easy to add
+figures, drawings, and sketches to your notes, something that vanilla
+Obsidian struggles with. But not all is lost. By using the <a
+href="https://github.com/zsviczian/obsidian-excalidraw-plugin">Excalidraw</a>
+plugin, we can create and edit figures from within Obsidian!</p>
+<p>Before I continue, I think its important to mention that Excalidraw
+is not a general-purpose drawing program like <a
+href="https://inkscape.org/">Inkscape</a> or MS Paint. Excalidraw is a
+<em>sketching</em> application – it even introduces sloppiness into its
+lines in order to produce a hand-drawn feel. This makes Excalidraw
+excellent for doing quick drawings, but renders it unsuitable for
+creating more precise or serious images.</p>
+<p>The rest of this section contains three quick tricks that have made
+Excalidraw more productive for me. I wish I could provide a more
+in-depth guide to this plugin, but I honestly don’t have the expertise
+to do that. If you’re interested in learning more, the author of the
+plugin has created hundreds of tutorials, which you can find on his
+YouTube channel <a
+href="https://www.youtube.com/@VisualPKM">here</a>.</p>
+<p><strong>1</strong>: By using <code>![[...]]</code> you can embed an
+Excalidraw image directly in a note without having to export it to a
+<code>.png</code> file. By adding <code>|100</code> to the inside of the
+hyperlink, you can resize the image to <code>100px</code> (or any other
+size). This technique also works for images that weren’t made with
+Excalidraw. I also prefer images to be centered in my notes, which I
+accomplish using the following CSS snippet:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>img {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">display</span><span class="ch">:</span> <span class="dv">block</span><span class="op">;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-left</span><span class="ch">:</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-right</span><span class="ch">:</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>2</strong>: I use Obsidian and Excalidraw in dark mode, but
+sometimes I need to export my figures with a white background. To
+achieve this functionality, open the settings for the Excalidraw plugin,
+click “Embedding Excalidraw into your Notes and Exporting, then”Export
+Settings”, then “Auto-export settings”, then “Export both dark- and
+light-themed images”.</p>
+<p><strong>3</strong>: I use the default hotkeys within Excalidraw in
+addition to some custom ones. You can find a list of active hotkeys in
+the “Hotkeys” section of Obsidian’s settings. I’ve created shortcuts to
+import <span class="math inline">\(\LaTeX\)</span> equations, create a
+new drawing, and import a drawing.</p>
+<p>I don’t add many figures and sketches to my notes, maybe 2 or 3 each
+week. However, when I do need to sketch something out, Excalidraw has
+always worked great for me. From what I can tell, the Excalidraw plugin
+has an <em>insane</em> amount of functionality. It might be just as fast
+as using an iPad with Goodnotes. I’d love to hear from anybody who has
+used this plugin for more serious use cases, so if this sounds like you,
+please reach out!</p>
+<h2 id="zotero-integration">Zotero Integration</h2>
+<p><a
+href="https://github.com/mgmeyers/obsidian-zotero-integration">Zotero
+Integration</a> is a handy plugin for importing information from a
+Zotero library into an Obsidian vault. It also allows you to import PDF
+annotations from Zotero into Obsidian, a feature I don’t use myself. I
+primarily use Zotero integration for the literature notes feature, which
+allows me to create a note in Obsidian which contains information about
+an academic paper. This information is stored in the metadata and can
+include details such as the title, authors, year, abstract, and DOI. I
+use links to literature notes as an “in-text citation” system within my
+vault that gives me easy access to the papers I’m thinking about.</p>
+<p>To get this system set up, add a new template to Zotero Integration
+titled “Literature Note”. I set the output path to
+<code>Literature Notes/{{citekey}}.md</code> which gives each literature
+note a name based on its Zotero citekey and moves it to the
+<code>Literature Notes</code> folder. Then, create a template file (I
+called mine <code>literature-note</code>) and specify it in the Zotero
+Integration settings. Here’s my template file:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="an">year:</span><span class="co"> {{date | format(&quot;YYYY&quot;)}}</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="an">tags:</span><span class="co"> {% if allTags %}{{allTags}}{% endif %}</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="an">DOI:</span><span class="co"> {{DOI}}</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="an">authors:</span><span class="co"> {{authors}}</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="an">url:</span><span class="co"> {{url}}</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> {{bibliography}}</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>**{{title}}**</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>{{pdfZoteroLink}}</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="fu"># Notes</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>{% persist &quot;notes&quot; %}</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>{% endpersist %}</span></code></pre></div>
+<p>This template automatically includes the year, tags, DOI, authors,
+URL, and bibliography in the metadata. The
+<code>{% persist "notes" %}</code> and <code>{% endpersist %}</code>
+delimiters are essential to prevent the content of the literature notes
+from being deleted if the same paper is imported again. To actually
+create a new literature note, use the command
+<code>Zotero Integration: Import notes</code> from the command palette,
+or bind a hotkey in your Obsidian settings.</p>
+<p><strong>Limitations</strong>: Using the Zotero Integration plugin
+tempted me to try to turn Obsidian into a fully-fledged environment for
+writing an academic paper, replete with support for citations, exporting
+via <a href="https://pandoc.org/">Pandoc</a>, and various environments
+for handling figures. I got close but I ultimately couldn’t get things
+to work as well as native <span class="math inline">\(\LaTeX\)</span>,
+which I edit using <a href="https://neovim.io/">Neovim</a>.</p>
+<h2 id="bonus-minimalist-obsidian">Bonus: Minimalist Obsidian</h2>
+<p>This section is all about my personal preferences for making Obsidian
+look pretty. In general, I believe in keeping my Obsidian as minimalist
+as possible. I’m serious about this. When I first open Obsidian, here’s
+what I see:</p>
+<p><img src="/templates/advanced-obsidian/home-example.png" /></p>
+<p>The easiest way to remove all the unnecessary buttons, toggles, and
+icons is to use the <a
+href="https://github.com/kepano/obsidian-hider">Hider</a> plugin. Any
+elements that aren’t included in this plugin can be hidden using a CSS
+snippet (see the section on custom callouts). The theme I use is Nord
+Dark from <a
+href="https://github.com/AnubisNekhet/AnuPpuccin">Anupuccin</a>, with
+some additional changes to the typography. I personally find the default
+headers in Obsidian to be unreasonably large, so I use the <a
+href="https://github.com/mgmeyers/obsidian-style-settings">Style
+Settings</a> plugin to make them smaller. I also prefer serif fonts
+(they’re easier on the eyes), so I replaced the default font SF Display
+with <a href="https://en.wikipedia.org/wiki/Palatino">Palatino</a>,
+which I think is quite beautiful. There’s definitely some more little
+things I’ve done over the years to improve Obsidian’s appearance, but
+these are the ones I can remember off the top of my head.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Customizing your vault with CSS snippets, plugins, and various other
+shenanigans can be both exciting and rewarding. I’ve probably spent
+upwards of 20 hours fine-tuning my Obsidian setup to be practical, fast,
+and most importantly, <em>fun</em>. While a lot of people say that
+configuring software like Obsidian and Neovim is a waste of time, I say
+that if you’re going spend your life learning and building, you might as
+well do it in an environment that is pleasant for you. Thanks for
+reading.</p>
