@@ -13,7 +13,7 @@ For the final project, my group and I explored models of the [Notch signalling p
 I wrote a brief summary of our work [here](/blog).
 
 I got my first exposure to Vim in 2023 after stumbling across an [excellent blog post](https://castel.dev/post/lecture-notes-1/) by Gilles Castel about using Vim to typeset mathematics.
-After setting up a similar system using [Vim-bindings in Obsidian](/), I was hooked.
+After setting up a similar system using [Vim-bindings in Obsidian](/fast-typesetting), I was hooked.
 I gradually started using Vim for coding and writing, which piqued my interest in terminal-based workflows as a whole.
 One thing led to the next, and in January 2025, I booted Linux for the first time on a refurbished Thinkpad T480. 
 I strongly believe that software should be performant, reliable, and most importantly, [free](https://www.fsf.org/). 

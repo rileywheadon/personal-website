@@ -33,17 +33,19 @@
 
 	<main>
 
-		<!-- Include Title -->
-		<h1>{{ metadata.title }}</h1>
-
-		<!-- Include Metadata -->
-		{% include "metadata.html" %} 
+		<!-- Include Header -->
+		{% if metadata.title == 'Home' %}
+			{% include "home.html" %}	
+		{% else %}
+			<h1>{{ metadata.title }}</h1>
+			{% include "metadata.html" %} 
+		{% endif %}
 
 		<!-- Include HTML Content -->
 		{{ content|safe }}
 
 		<!-- Include Index table -->
-		{% if index %}
+		{% if metadata.title == 'Index' %}
 			{% include "index.html" %}
 		{% endif %}
 

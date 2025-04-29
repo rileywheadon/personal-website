@@ -5,3 +5,4 @@ certainty; Certain
 importance; Low
 status; Ongoing
 tags; Personal
+hidden; true
