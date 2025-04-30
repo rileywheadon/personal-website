@@ -82,7 +82,7 @@ Generating the plot shown in Figure 1, required $\approx 100\,000$ reactions per
 And this was for a system with only two cells and $\approx 200$ molecule of each type.
 For simulations involving more molecules and/or cells, using an agent-based model would not be computationally feasible.
 
-![Figure 1: Results of $10$ simulations of the agent-based model on a $2$-cell domain. Green lines represent the cell which adopted the primary fate, while orange lines represent the cell which adopted the secondary fate. The mean (solid) and standard deviation (dashed) over all simulations are shown in bold.](/templates/delta-notch/agent-based.png)
+![**Figure 1**: Results of $10$ simulations of the agent-based model on a $2$-cell domain. Green lines represent the cell which adopted the primary fate, while orange lines represent the cell which adopted the secondary fate. The mean (solid) and standard deviation (dashed) over all simulations are shown in bold.](/templates/delta-notch/agent-based.png)
 
 [^2]: In particular, we assume that the times between reactions are independent and memoryless. Therefore, the inter-reaction times are exponentially distributed.
 
@@ -123,7 +123,7 @@ Let's go through each of the numbered terms one by one to get a better idea of w
 
 The ODE model is _deterministic_, which means that if the initial state is the same, the simulation will always produce the same outcome. If both cells start in exactly the same state, then there will be an identical number of Delta-Notch binding events in each cell, and the cells will not differentiate. Therefore, we make a small, random adjustment to the initial state (a _perturbation_) in order to ensure that cell differentiation occurs. Simulations of the deterministic ODE model are shown in Figure 2.
 
-![Figure 2: Results of $10$ simulations of the ODE model with random perturbations to the initial condition on a $2$-cell domain. Green lines represent the cell which adopted the primary fate, while orange lines represent the cell which adopted the secondary fate. The mean (solid) and standard deviation (dashed) over all simulations are shown in bold.](/templates/delta-notch/deterministic-ode.png)
+![**Figure 2**: Results of $10$ simulations of the ODE model with random perturbations to the initial condition on a $2$-cell domain. Green lines represent the cell which adopted the primary fate, while orange lines represent the cell which adopted the secondary fate. The mean (solid) and standard deviation (dashed) over all simulations are shown in bold.](/templates/delta-notch/deterministic-ode.png)
 
 ### Adding Randomness
 
@@ -133,7 +133,7 @@ We can do this by adding _noise_ via a [Wiener Process](https://en.wikipedia.org
 By reintroducing randomness into our model, we no longer need to add an initial perturbation, since the noise created by the Wiener Process is sufficient to drive cell differentiation.
 We call this new model the _stochastic ODE model_.
 
-![Figure 3: Results of $10$ simulations of the stochastic ODE model on a $2$-cell domain. Green lines represent the cell which adopted the primary fate, while orange lines represent the cell which adopted the secondary fate. The mean (solid) and standard deviation (dashed) over all simulations are shown in bold.](/templates/delta-notch/stochastic-ode.png)
+![**Figure 3**: Results of $10$ simulations of the stochastic ODE model on a $2$-cell domain. Green lines represent the cell which adopted the primary fate, while orange lines represent the cell which adopted the secondary fate. The mean (solid) and standard deviation (dashed) over all simulations are shown in bold.](/templates/delta-notch/stochastic-ode.png)
 
 ### Estimating the Noise Coefficient
 
@@ -142,7 +142,7 @@ One technique we explored was to use the _differentiation time_, or the mean len
 Higher amounts of noise increase the probability that the two cells become irreversibly different, which reduces the differentiation time.
 Therefore, by comparing differentiation times in the stochastic ODE model and agent-based model, we can get an accurate estimate of the noise coefficient.
 
-![Figure 4: This plot shows the distribution of differentiation times simulations of the stochastic ODE model with different noise coefficients, as well as the agent-based model. Higher levels of noise result in shorter differentiation times (pink), while lower levels of noise result in longer differentiation times (orange). A noise coefficient of $0.02$ (brown) produces differentiation times most similar to the agent-based model (blue).](/templates/delta-notch/noise.png)
+![**Figure 4**: This plot shows the distribution of differentiation times simulations of the stochastic ODE model with different noise coefficients, as well as the agent-based model. Higher levels of noise result in shorter differentiation times (pink), while lower levels of noise result in longer differentiation times (orange). A noise coefficient of $0.02$ (brown) produces differentiation times most similar to the agent-based model (blue).](/templates/delta-notch/noise.png)
 
 ## Conclusion
 
