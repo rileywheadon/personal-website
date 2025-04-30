@@ -4,7 +4,7 @@
 
 - [ ] Sort by date and filter by tag functionality on `/index`
 - [ ] Improve image loading speed
-- [ ] Fix "Same Origin Policy" and "sha512" Javascript errors on production
+- [ ] Make the navbar buttons grow while still wrapping on mobile
 
 ## Revisions
 
