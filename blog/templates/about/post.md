@@ -5,7 +5,8 @@ In addition to my studies, I'm passionate about Unix, Vim, and software engineer
 I also enjoy running, [reading](/library), and playing the piano. 
 On the [Big Five Personality Traits](https://en.wikipedia.org/wiki/Big_Five_personality_traits) I am high in openness and conscientiousness, roughly average in extroversion and neuroticism, and low in agreeableness.
 
-I have spent much of the last year doing research in mathematical biology.
+I am currently working with [Dr. Cuauhtémoc T. Vidrio Sahagún](https://profiles.ucalgary.ca/cuauhtemoc-t-vidrio-sahagun) and [Dr. Alain Pietroniro](https://profiles.ucalgary.ca/alain-pietroniro) on implementing a [Flood Frequency Analysis Framework](https://www.sciencedirect.com/science/article/pii/S136481522400001X) in the R programming language.
+Before this, I spent a year doing research in mathematical biology.
 From April to December 2024, I worked with [Dr. Eric Cytrynbaum](https://personal.math.ubc.ca/~cytryn/index.shtml) to develop a mathematical model of root growth in *A. Thaliana*.
 An up-to-date copy of our manuscript can be found [here](https://github.com/rileywheadon/root-modelling/blob/master/paper/main.pdf) and the code for the project can be found [here](https://github.com/rileywheadon/clasp-model).
 I also took MATH 462 (Projects in Mathematical Biology), a graduate-level mathematical modelling course at UBC.
