@@ -1,11 +1,12 @@
 ## About Me
 
-I'm Riley, a third year undergraduate student studying mathematics and statistics at the University of British Columbia.
+I'm Riley, a fourth year undergraduate student studying mathematics and statistics at the University of British Columbia.
 In addition to my studies, I'm passionate about Unix, Vim, and software engineering.
-I also enjoy running, [reading](/library), and playing the piano. 
-On the [Big Five Personality Traits](https://en.wikipedia.org/wiki/Big_Five_personality_traits) I am high in openness and conscientiousness, roughly average in extroversion and neuroticism, and low in agreeableness.
+I also enjoy running, [reading](/library), [hiking](/hiking), and playing the piano. 
+I am currently working at [SAP Canada](https://www.sap.com/canada/index.html) as an intern on the CI/CD team until April 2026. 
 
-I am currently working with [Dr. Cuauhtémoc T. Vidrio Sahagún](https://profiles.ucalgary.ca/cuauhtemoc-t-vidrio-sahagun) and [Dr. Alain Pietroniro](https://profiles.ucalgary.ca/alain-pietroniro) on implementing a [Flood Frequency Analysis Framework](https://www.sciencedirect.com/science/article/pii/S136481522400001X) in the R programming language.
+From May to August 2025, I worked with [Dr. Cuauhtémoc T. Vidrio Sahagún](https://profiles.ucalgary.ca/cuauhtemoc-t-vidrio-sahagun) and [Dr. Alain Pietroniro](https://profiles.ucalgary.ca/alain-pietroniro) to implement a [Flood Frequency Analysis Framework](https://www.sciencedirect.com/science/article/pii/S136481522400001X) in the R programming language.
+Documentation for the software I created can be found [here](https://rileywheadon.github.io/ffa-framework/).
 Before this, I spent a year doing research in mathematical biology.
 From April to December 2024, I worked with [Dr. Eric Cytrynbaum](https://personal.math.ubc.ca/~cytryn/index.shtml) to develop a mathematical model of root growth in *A. Thaliana*.
 An up-to-date copy of our manuscript can be found [here](https://github.com/rileywheadon/root-modelling/blob/master/paper/main.pdf) and the code for the project can be found [here](https://github.com/rileywheadon/clasp-model).

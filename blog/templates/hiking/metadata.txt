@@ -1,0 +1,8 @@
+title; Hiking
+created; 2025/08/24
+audience; Everyone
+certainty; Certain
+importance; Low
+status; Ongoing
+tags; Personal
+hidden; true

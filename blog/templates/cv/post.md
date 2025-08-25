@@ -1,20 +1,20 @@
+## LinkedIn
+
+My LinkedIn can be found [here](www.linkedin.com/in/riley-wheadon-91b639354), but this page is more comprehensive and recent.
+
 ## Education
 
 **University of British Columbia** - *B.Sc. Mathematics, Minor in Statistics* \
-September 2022 - April 2026
+September 2022 - April 2027
 
-- Cumulative Average: 94.1% (A+)
+- Cumulative Average: 94.4%
 - Selected Courses:
-	- MATH 302 - Probability (A+)
-	- MATH 223 - Linear Algebra (A+)
 	- CPSC 221 - Data Structures & Algorithms (A+)
-	- MATH 226 - Multivariate Calculus (A)
-	- MATH 227 - Vector Calculus (A+)
-	- MATH 215 - Ordinary Differential Equations (A+)
+	- MATH 223 - Honours Linear Algebra (A+)
+	- MATH 302 - Probability (A+)
+    - MATH 303 - Stochastic Processes (A+)
 	- MATH 316 - Partial Differential Equations (A+)
-- Ongoing Courses:
-	- MATH 303 - Stochastic Processes
-	- STAT 305 - Statistical Inference
+	- STAT 305 - Statistical Inference (A+)
 
 **Westmount Charter School** - *High School Diploma* \
 September 2019 - June 2022
@@ -24,8 +24,16 @@ September 2019 - June 2022
 
 ## Experience
 
+**University of Calgary** - *Research Software Engineer* \
+May 2025 - Present
+
+- Developed an [R package](https://rileywheadon.github.io/ffa-framework/) for conducting reproducible flood frequency analysis (FFA).
+- Wrote comprehensive documentation for over 60 new R functions.
+- Built and deployed a web application (available [here](ffaframework.rwheadon.dev)) based on my R package.
+- Presented my work to senior representatives from the [Environment and Climate Change Canada](https://www.canada.ca/en/environment-climate-change.html) and the [Alberta Ministry of Environment and Protected Areas](https://www.alberta.ca/environment-and-protected-areas).
+ 
 **University of British Columbia** - *Teaching Assistant* \
-September 2023 - Present
+September 2023 - April 2025
 
 - Received student evaluations averaging 4.9/5 from 35 responses over 6 semesters.
 - "*Riley made helpful comments when we seemed to be stuck. I liked the fact that he did not just reveal the correct solving method and answer right away, but rather helped us to figure it out by ourselves.*" - Anonymous Student

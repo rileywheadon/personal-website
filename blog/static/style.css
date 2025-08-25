@@ -148,7 +148,8 @@ h2:after {
 }
 
 h3 {
-	color: #111;
+	color: #444;
+	text-align: center;
 	font-size: 1.4rem;
 }
 
