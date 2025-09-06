@@ -1,7 +1,0 @@
-title; Library
-created; 2025/04/26
-audience; Everyone
-certainty; Certain
-importance; Low
-status; Ongoing
-tags; Archive

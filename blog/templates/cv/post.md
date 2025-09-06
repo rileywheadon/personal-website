@@ -24,12 +24,17 @@ September 2019 - June 2022
 
 ## Experience
 
+**SAP Canada** - *CI/CD Intern* \
+September 2025 - Present
+
+- Building and maintaining enterprise-scale CI/CD pipelines for SAP Analytics Cloud.
+
 **University of Calgary** - *Research Software Engineer* \
-May 2025 - Present
+May 2025 - August 2025
 
 - Developed an [R package](https://rileywheadon.github.io/ffa-framework/) for conducting reproducible flood frequency analysis (FFA).
 - Wrote comprehensive documentation for over 60 new R functions.
-- Built and deployed a web application (available [here](ffaframework.rwheadon.dev)) based on my R package.
+- Built and deployed a web application based on my R package.
 - Presented my work to senior representatives from the [Environment and Climate Change Canada](https://www.canada.ca/en/environment-climate-change.html) and the [Alberta Ministry of Environment and Protected Areas](https://www.alberta.ca/environment-and-protected-areas).
  
 **University of British Columbia** - *Teaching Assistant* \

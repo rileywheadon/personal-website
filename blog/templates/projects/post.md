@@ -1,9 +1,10 @@
 ## Polll
 
-_November 2024 - Present_ |
-[Link](https://polll.org)
+_November 2024 - March 2025_
 
 A web application and social network for creating and sharing polls[^1]. Built with [TailwindCSS](https://tailwindcss.com/), [Flask](https://flask.palletsprojects.com/en/stable/) and [Supabase](https://supabase.com/). Hosted on [Heroku](https://www.heroku.com/).
+
+*Polll has been archived as of September 6th, 2025. The source code is available [here](https://github.com/rileywheadon/poll-app).*
 
 ## Comparing Models of Delta-Notch Signalling
 
