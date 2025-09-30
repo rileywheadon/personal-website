@@ -1,4 +1,4 @@
-title; Curriculum Vitae
+title; Resume
 created; 2025/04/26
 audience; Employers
 certainty; Certain
