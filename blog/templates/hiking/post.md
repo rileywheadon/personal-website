@@ -1,36 +1,24 @@
-## Index
+## Grotto Mountain
 
-| Date        | Name                 | Location | Peak  | Gain  | Length |
-| ----------- | -------------------- | -------- | ----- | ----- | ------ |
-| May 2025    | Anklebiter Ridge[^1] | AB, CAN  | 2131m | 854m  | 6.0km  |
-| May 2025    | Powderface Ridge     | AB, CAN  | 2204m | 754m  | 11.km  |
-| June 2025   | Lake Agnes           | AB, CAN  | -     | 502m  | 7.4km  |
-| June 2025   | Grotto Mountain      | AB, CAN  | 2706m | 1463m | 12.9km |
-| June 2025   | Jumpingpound Summit  | AB, CAN  | 2225m | 407m  | 6.3km  |
-| June 2025   | Mount Lougheed       | AB, CAN  | 3107m | 1440m | 12.2km |
-| July 2025   | Flora Peak           | BC, CAN  | 1953m | 1295m | 11.7km |
-| July 2025   | Cascade Mountain     | AB, CAN  | 2998m | 1689m | 18.5km |
-| July 2025   | Mount Temple         | AB, CAN  | 3544m | 1704m | 14.3km |
-| August 2025 | Castle Mountain[^2]  | AB, CAN  | 2766m | 1858m | 28.2km |
-| August 2025 | Stewart Canyon[^3]   | AB, CAN  | -     | 588m  | 14.7km |
-| August 2025 | Sarrail Ridge        | AB, CAN  | -     | 1063m | 12.1km |
-| August 2025 | Mount Rundle         | AB, CAN  | 2948m | 1711m | 15.4km |
+- Length: 7.4km
+- Peak Elevation: 2706m
+- Elevation Gain: 1463m
 
-[^1]: Including the traverse to Bluemat hill.
-
-[^2]: Plus Stuart Knob (2850m) and Helena Ridge (2860m).
-
-[^3]: From the Two Jack Lake campsite.
-
-## Photos
-
-### Grotto Mountain
+June 14th, 2025: Grotto Mountain is one of the higher peaks in the Canmore area but still a fairly straightforward climb.
+We started from the Alpine Club of Canada and climbed the "easy route" up the left side of the mountain.
 
 ![The view over the back side of Grotto Mountain.](/templates/hiking/grotto-01.webp)
 
 ![The town of Canmore from the summit of Grotto Mountain.](/templates/hiking/grotto-02.webp)
 
-### Mount Lougheed
+## Mount Lougheed
+
+- Length: 12.2km
+- Peak Elevation: 3107m
+- Elevation Gain: 1440m
+
+June 29th, 2025: In my opinion, Mount Lougheed is one of the most beautiful mountains in Kananaskis so I was stoked to make it to the summit.
+However, we probably should've went later in the season since there was a lot of snow on the final part of the climb. 
 
 ![Mount Lougheed towering over the Trans-Canada Highway.](/templates/hiking/lougheed-01.webp)
 
@@ -44,11 +32,26 @@
 
 ![Panorama view from the summit. Little Lougheed and the spray lakes can be seen between the second and third peaks.](/templates/hiking/lougheed-06.webp)
 
-### Cascade Mountain
+## Cascade Mountain
+
+- Length: 18.5km
+- Peak Elevation: 2998m
+- Elevation Gain: 1689m
+
+July 12th, 2025: Cascade Mountain is a fairly popular hike near the Norquay ski area.
+We saw a lot of people today, including quite a few tourists who were *very* unprepared. 
+The trail itself is pretty boring but the views from the top were great!
 
 ![The Bow Valley from the summit of Cascade Mountain.](/templates/hiking/cascade-01.webp)
 
-### Mount Temple
+## Mount Temple
+
+- Length: 14.3km
+- Peak Elevation: 3544m
+- Elevatin Gain: 1704m
+
+July 24th, 2025: Mount Temple is one of the tallest mountains in Alberta and one of the few 11,000ft peaks that can be climbed without mountaineering equipment.
+We were a bit disappointed by how cloudy it was at the top, but the views were still spectacular.
 
 ![A beautiful sunrise near the University of Calgary.](/templates/hiking/temple-00.webp)
 
@@ -66,7 +69,15 @@
 
 ![Moraine Lake from the summit of Mount Temple with two large cornices in the foreground.](/templates/hiking/temple-07.webp)
 
-### Castle Mountain
+## Castle Mountain
+
+- Length: 28.2km
+- Peak Elevation: 2766m
+- Elevation Gain: 1858m
+
+August 4th, 2025: With its distinctive rectangular shape, Castle Mountain is one of the most iconic peaks in the Canadian rockies.
+The area around and above Rockbound Lake is absolutely beautiful as well.
+This was an absolutely amazing day and I can't recommend this area enough.
 
 ![Looking down on Rockbound Lake with Castle Mountain in the background.](/templates/hiking/castle-01.webp)
 
@@ -80,7 +91,14 @@
 
 ![The view of Rockbound Lake from the summit of Helena Ridge.](/templates/hiking/castle-06.webp)
 
-### Mount Rundle
+## Mount Rundle
+
+- Length: 15.4km
+- Peak Elevation: 2948m
+- Elevation Gain: 1711m
+
+August 23rd, 2025: Mount Rundle spans almost the entire distance from Canmore to Banff, towering above the Trans-Canada highway.
+The scree on the last 800m of elevation was brutal, but by this point in the season I was pretty used to it.
 
 ![Looking down on a narrow ridge while climbing Mount Rundle. Sulphur Mountain can be seen in the background. ](/templates/hiking/rundle-01.webp)
 

@@ -24,9 +24,7 @@ footer {
 }
 
 
-/* *************** */
 /* HOME FORMATTING */
-/* *************** */
 
 .home-card {
 	display: grid;
@@ -56,9 +54,7 @@ footer {
 }
 
 
-/* ***************** */
 /* NAVBAR FORMATTING */
-/* ***************** */
 
 .navbar {
 	display: flex;
@@ -90,9 +86,7 @@ footer {
 }
 
 
-/* ******************* */
 /* METADATA FORMATTING */
-/* ******************* */
 
 .metadata-container {
 	background-color: #eee;
@@ -124,9 +118,7 @@ footer {
 }
 
 
-/* *************** */
 /* BLOG FORMATTING */
-/* *************** */
 
 h1 {
 	font-size: 3rem;
@@ -273,5 +265,6 @@ th {
 td {
 	padding: 0.5rem 0.5rem;
 }
+
 
 
