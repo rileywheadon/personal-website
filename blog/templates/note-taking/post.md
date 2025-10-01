@@ -58,7 +58,7 @@ If I search for `MATH 100 formula sheet`, the fuzzy finder will only index the f
 
 **LaTeX Suite**
 
-The [Obsidian LaTeX Suite](https://github.com/artisticat1/obsidian-latex-suite) allows me to rapidly typeset $\LaTeX$ using a set of customizable snippets. I'm not going to elaborate on this plugin's functionality since I wrote a separate guide on it [here](../fast-typesetting/index.qmd).
+The [Obsidian LaTeX Suite](https://github.com/artisticat1/obsidian-latex-suite) allows me to rapidly typeset $\LaTeX$ using a set of customizable snippets. I'm not going to elaborate on this plugin's functionality since I wrote a separate guide on it [here](/fast-typesetting).
 
 **Advanced Tables**
 
