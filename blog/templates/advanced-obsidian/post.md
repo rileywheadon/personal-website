@@ -1,4 +1,4 @@
-This is a follow up to my previous two posts about Obsidian, [How I Take Notes](../note-taking/index.qmd) and [Fast Typesetting with Obsidian LaTeX Suite](../fast-typesetting/index.qmd). Today, I take a deep dive into how I've used Obsidian throughout my undergraduate degree to take notes in my mathematics, computer science, and statistics classes. The systems I outline in the subsequent sections are specifically tailored for university students in a STEM major, although the plugins and techniques I use are applicable to a wide variety of knowledge management use cases.
+This is a follow up to my previous two posts about Obsidian, [How I Take Notes](/note-taking) and [Fast Typesetting with Obsidian LaTeX Suite](/fast-typesetting). Today, I take a deep dive into how I've used Obsidian throughout my undergraduate degree to take notes in my mathematics, computer science, and statistics classes. The systems I outline in the subsequent sections are specifically tailored for university students in a STEM major, although the plugins and techniques I use are applicable to a wide variety of knowledge management use cases.
 
 **Prerequisites**: This article assumes proficiency with [Obsidian](https://obsidian.md/) and familiarity with the [Obsidian LaTeX Suite](https://github.com/artisticat1/obsidian-latex-suite) plugin. Some experience with CSS may be helpful for the section on custom callouts.
 
@@ -70,7 +70,7 @@ At this point, you should be able to open Obsidian and create a new custom callo
 > Content
 ```
 
-This is pretty awesome, but we can make callouts _even better_ by using plugins to create them in just a few keystrokes. I do this by using the [Obsidian LaTeX Suite](https://github.com/artisticat1/obsidian-latex-suite) plugin, which also works for general purpose text expansion. If you need a refresher on how to use this plugin, I wrote a guide on it [here](../fast-typesetting/index.qmd). As an example of how to set up a snippet for creating a custom callout, I have included the code for generating my "Theorem" snippet below:
+This is pretty awesome, but we can make callouts _even better_ by using plugins to create them in just a few keystrokes. I do this by using the [Obsidian LaTeX Suite](https://github.com/artisticat1/obsidian-latex-suite) plugin, which also works for general purpose text expansion. If you need a refresher on how to use this plugin, I wrote a guide on it [here](/fast-typesetting). As an example of how to set up a snippet for creating a custom callout, I have included the code for generating my "Theorem" snippet below:
 
 ```lua
 {

@@ -2,7 +2,7 @@
 
 I'm Riley, a fourth year undergraduate student studying mathematics and statistics at the University of British Columbia.
 In addition to my studies, I'm passionate about Unix, Vim, and software engineering.
-I also enjoy running, [reading](/library), [hiking](/hiking), and playing the piano. 
+I also enjoy running, reading, [hiking](/hiking), and playing the piano. 
 I am currently working at [SAP Canada](https://www.sap.com/canada/index.html) as a CI/CD intern until April 2026. 
 
 From May to August 2025, I worked with [Dr. Cuauhtémoc T. Vidrio Sahagún](https://profiles.ucalgary.ca/cuauhtemoc-t-vidrio-sahagun) and [Dr. Alain Pietroniro](https://profiles.ucalgary.ca/alain-pietroniro) to implement a [Flood Frequency Analysis Framework](https://www.sciencedirect.com/science/article/pii/S136481522400001X) in the R programming language.
@@ -12,7 +12,7 @@ From April to December 2024, I worked with [Dr. Eric Cytrynbaum](https://persona
 An up-to-date copy of our manuscript can be found [here](https://github.com/rileywheadon/root-modelling/blob/master/paper/main.pdf) and the code for the project can be found [here](https://github.com/rileywheadon/clasp-model).
 I also took MATH 462 (Projects in Mathematical Biology), a graduate-level mathematical modelling course at UBC.
 For the final project, my group and I explored models of the [Notch signalling pathway](https://en.wikipedia.org/wiki/Notch_signaling_pathway). 
-I wrote a brief summary of our work [here](/blog).
+I wrote a brief summary of our work [here](/delta-notch).
 
 I got my first exposure to Vim in 2023 after reading this [excellent blog post](https://castel.dev/post/lecture-notes-1/) by Gilles Castel.
 After setting up a similar system using [Vim-bindings in Obsidian](/fast-typesetting), I was hooked.
