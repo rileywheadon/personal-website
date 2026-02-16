@@ -5,3 +5,4 @@ certainty; Certain
 importance; Medium
 status; Ongoing
 tags; Obsidian, University
+math; True

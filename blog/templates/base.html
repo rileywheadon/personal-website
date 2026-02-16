@@ -13,7 +13,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap" rel="stylesheet">
 
 	<!-- MathJax -->
+	{% if metadata.math %}
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" defer></script>
+	{% endif %}
 
 	<!-- Custom styles and JS -->
 	<link rel="stylesheet" href="/static/style.css">
