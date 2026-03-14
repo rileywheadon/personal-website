@@ -12,12 +12,12 @@
 
 **Pages**
 
-- `/` introduction 
+- `/` introduction
 - `/about` about me
 - `/design` about the site
 - `/library` collection of books i've read with reviews
 - `/employers` specifically for employers (list of skills, CV, etc.)
-- `/projects` list of projects, links to git repo, blog post, etc. 
+- `/projects` list of projects, links to git repo, blog post, etc.
 - `/blog` index of writing with backlinks to projects when necessary
 
 **Metadata**

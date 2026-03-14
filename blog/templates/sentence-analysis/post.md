@@ -9,11 +9,11 @@ Since the abstract and introduction are central to all journal articles, underst
 However, advice on paper writing is often general and unclear.
 While recommendations like "start broad and then gradually get narrower" or "make sure to emphasize the importance of your research" aren't bad advice, there's much more nuance in an excellent paper.
 Today, I outline a data-driven framework for writing abstracts and introductions for research articles.
-To do this, I analyzed 500 papers from the [PLOS Computational Biology](https://journals.plos.org/ploscompbiol/) journal using the open source LLM [Llama 3.2](https://www.llama.com/). 
+To do this, I analyzed 500 papers from the [PLOS Computational Biology](https://journals.plos.org/ploscompbiol/) journal using the open source LLM [Llama 3.2](https://www.llama.com/).
 
 ## Web Scraping
 
-This project required abstracts and introductions from many academic papers. Getting a bunch of abstracts is straightforward, the [arXiv Dataset](https://www.kaggle.com/datasets/Cornell-University/arxiv) contains millions of them. 
+This project required abstracts and introductions from many academic papers. Getting a bunch of abstracts is straightforward, the [arXiv Dataset](https://www.kaggle.com/datasets/Cornell-University/arxiv) contains millions of them.
 However, sourcing the introductions from these papers is much harder.
 My first idea was to feed the full-text PDFs from the arXiv dataset directly into the LLM.
 However, even state-of-the-art models like ChatGPT 4o struggled to differentiate between the various sections in the research articles.
@@ -42,7 +42,7 @@ This was enough to categorize the abstracts and introductions from about 150 pap
 Since doing all 9,653 papers would have taken months, I opted to analyze the 500 most recent papers instead.
 This was still a big job.
 In total, the LLM analyzed over 20,000 sentences with over 300,000 words.
-The prompt I used is shown below: 
+The prompt I used is shown below:
 
 >Here are four categories for classifying the sentences of a scientific paper.
 >Make sure that you correctly divide the text into sentences.
@@ -50,10 +50,10 @@ The prompt I used is shown below:
 >However, all sentences must end with a period or question mark.
 >
 >
->CATEGORY 1: Motivation for the research in a broad context. 
+>CATEGORY 1: Motivation for the research in a broad context.
 >This type of sentence helps the reader to understand why the research is relevant, useful, and interesting.
 >
->CATEGORY 2: Past research in the field, which may be experimental or theoretical. 
+>CATEGORY 2: Past research in the field, which may be experimental or theoretical.
 >Sentences in this category may also describe the results of previous research efforts.
 >
 >CATEGORY 3: Descriptions of topics that remain poorly understood or descriptions of gaps in the literature that need to be filled.
@@ -116,4 +116,4 @@ Thanks for reading!
 
 ## Acknowledgment
 
-I would like to thank [Prof. Eric Cytrynbaum](https://personal.math.ubc.ca/~cytryn/index.shtml) for providing the idea for this project. 
+I would like to thank [Prof. Eric Cytrynbaum](https://personal.math.ubc.ca/~cytryn/index.shtml) for providing the idea for this project.

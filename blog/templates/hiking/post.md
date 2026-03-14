@@ -18,7 +18,7 @@ We started from the Alpine Club of Canada and climbed the "easy route" up the le
 - Elevation Gain: 1440m
 
 June 29th, 2025: In my opinion, Mount Lougheed is one of the most beautiful mountains in Kananaskis so I was stoked to make it to the summit.
-However, we probably should've went later in the season since there was a lot of snow on the final part of the climb. 
+However, we probably should've went later in the season since there was a lot of snow on the final part of the climb.
 
 <img src="/templates/hiking/lougheed-01.webp" alt="Mount Lougheed towering over the Trans-Canada Highway." loading="lazy">
 
@@ -39,7 +39,7 @@ However, we probably should've went later in the season since there was a lot of
 - Elevation Gain: 1689m
 
 July 12th, 2025: Cascade Mountain is a fairly popular hike near the Norquay ski area.
-We saw a lot of people today, including quite a few tourists who were *very* unprepared. 
+We saw a lot of people today, including quite a few tourists who were *very* unprepared.
 The trail itself is pretty boring but the views from the top were great!
 
 <img src="/templates/hiking/cascade-01.webp" alt="The Bow Valley from the summit of Cascade Mountain." loading="lazy">

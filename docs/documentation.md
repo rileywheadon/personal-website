@@ -36,7 +36,7 @@ Then, symlink the configuration file to `/etc/nginx/sites-enabled/`:
 sudo ln -s /etc/nginx/sites-available/yourapp.conf /etc/nginx/sites-enabled/
 ```
 
-Verify the configuration using `sudo nginx -t`. 
+Verify the configuration using `sudo nginx -t`.
 
 Next, add an A record on Cloudflare that points to the IP address of the VM.
 
@@ -112,7 +112,7 @@ Create a file `/srv/www/site.git/hooks/post-receive` with the following content:
 set -euo pipefail
 
 # Branch to deploy
-TARGET_BRANCH="master"   
+TARGET_BRANCH="master"
 
 # Working tree (web root or source dir)
 WORK_TREE="/var/www/personal-website"

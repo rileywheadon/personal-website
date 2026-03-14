@@ -7,7 +7,7 @@
 	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 	<title>{{ metadata.title }}</title>
 
-	<!-- EB Garamond Display Font -->	
+	<!-- EB Garamond Display Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
 
 <body>
 
-<div class="container"> 
+<div class="container">
 
 	{% include "navbar.html" %}
 
@@ -33,10 +33,10 @@
 
 		<!-- Include Header -->
 		{% if metadata.title == 'Home' %}
-			{% include "home.html" %}	
+			{% include "home.html" %}
 		{% else %}
 			<h1>{{ metadata.title }}</h1>
-			{% include "metadata.html" %} 
+			{% include "metadata.html" %}
 		{% endif %}
 
 		<!-- Include HTML Content -->

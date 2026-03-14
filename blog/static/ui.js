@@ -10,5 +10,5 @@ function toggle_metadata() {
 		toggle.innerHTML = "&minus;";
 		content.style.display = "block";
 	}
-	
+
 }

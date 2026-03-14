@@ -66,18 +66,18 @@ Environments:
 
 ```javascript
 {
-	trigger: "cases", 
-	replacement: "\\begin{cases}\n$0\n\\end{cases}", 
+	trigger: "cases",
+	replacement: "\\begin{cases}\n$0\n\\end{cases}",
 	options: "mA"
 },
 {
-	trigger: "align", 
-	replacement: "\\begin{align}\n$0\n\\end{align}", 
+	trigger: "align",
+	replacement: "\\begin{align}\n$0\n\\end{align}",
 	options:"mA"
 },
 {
-	trigger: "eqn", 
-	replacement: "\\begin{equation}\n$0\n\tag{$1}\\end{equation}", 
+	trigger: "eqn",
+	replacement: "\\begin{equation}\n$0\n\tag{$1}\\end{equation}",
 	options: "mA"
 }
 ```
@@ -178,19 +178,19 @@ Linear Algebra:
 {trigger: ":k", replacement: "\\mathbf{k}", options: "mA"},
 {trigger: "hat", replacement: "\\hat{$0}$1", options: "mA"},
 {
-	trigger: "vmtx", 
-	replacement: "\\begin{vmatrix}\n$0\n\\end{vmatrix}", 
+	trigger: "vmtx",
+	replacement: "\\begin{vmatrix}\n$0\n\\end{vmatrix}",
 	options: "mA"
 },
 {
-	trigger: "mtx", 
+	trigger: "mtx",
 	replacement:
 	"\\begin{pmatrix}\n$0\n\\end{pmatrix}",
 	options: "mA"
 },
 {
-	trigger: "aug", 
-	replacement: "\\left[\\begin{array{$0|c}\n$1\n\\end{array}\\right]", 
+	trigger: "aug",
+	replacement: "\\left[\\begin{array{$0|c}\n$1\n\\end{array}\\right]",
 	options: "mA"
 },
 ```

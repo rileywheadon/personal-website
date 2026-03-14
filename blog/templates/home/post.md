@@ -9,5 +9,5 @@ For STEM students looking to improve their study habits and note-taking, I have 
 
 ## Contact
 
-You can reach me via email at [rileywheadon@gmail.com](mailto:rileywheadon@gmail.com). 
+You can reach me via email at [rileywheadon@gmail.com](mailto:rileywheadon@gmail.com).
 

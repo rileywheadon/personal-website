@@ -72,7 +72,7 @@ footer {
 }
 
 .navbar-item:hover {
-	background-color: #eee;	
+	background-color: #eee;
 }
 
 .navbar-link {
@@ -190,7 +190,7 @@ a:hover {
 }
 
 li {
-	line-height: 1.4;	
+	line-height: 1.4;
 	font-size: 1.3rem;
 	color: #111;
 }
@@ -199,7 +199,7 @@ li {
 /* MOBILE COMPATIBILITY */
 @media (max-width: 768px) {
   ul {
-    padding-left: 1rem; 
+    padding-left: 1rem;
   }
 
   li {

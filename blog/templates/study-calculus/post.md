@@ -27,7 +27,7 @@ Color-code the questions: green if you understand everything, yellow if you're a
 
 ## 3: Put the Calculator Away
 
-If you came from the Canadian high school system, you were probably allowed a calculator for your pre-calculus classes. However, calculators are not allowed in the first-year calculus courses at UBC (and most upper-year math courses). Some students live in denial of this policy and continue using a calculator whenever possible throughout the semester. Unsurprisingly, these students later lose marks on exams due to computation errors. To minimize the chances of these silly mistakes, I think its best to avoid using a calculator while doing practice problems[^1]. Mental math isn't fun, but it is necessary for success in calculus. 
+If you came from the Canadian high school system, you were probably allowed a calculator for your pre-calculus classes. However, calculators are not allowed in the first-year calculus courses at UBC (and most upper-year math courses). Some students live in denial of this policy and continue using a calculator whenever possible throughout the semester. Unsurprisingly, these students later lose marks on exams due to computation errors. To minimize the chances of these silly mistakes, I think its best to avoid using a calculator while doing practice problems[^1]. Mental math isn't fun, but it is necessary for success in calculus.
 
 ## 4: Embrace the Struggle
 
@@ -39,11 +39,11 @@ If you have an exam soon, you should practice doing problems quickly. I've found
 
 ## 6: Advice for Writing Tests
 
-Ensure you are well-rested and well-fed. Bring drinks/food/gum to the exam if it helps you. Do not study within two hours of the test -- do something relaxing instead. Do not write tests while drunk/high/hungover. If you are going to use stimulants, take a *reasonable* amount. Yes, I know this is trivial stuff. And yes, there are actually people who don't do these things. 
+Ensure you are well-rested and well-fed. Bring drinks/food/gum to the exam if it helps you. Do not study within two hours of the test -- do something relaxing instead. Do not write tests while drunk/high/hungover. If you are going to use stimulants, take a *reasonable* amount. Yes, I know this is trivial stuff. And yes, there are actually people who don't do these things.
 
 Okay, onto the more interesting advice.
 
-If you can't figure out how to do a problem in ~3 minutes, skip it and come back to it later. You'd be shocked at how good your subconscious is at coming up with ideas while you're working on the other problems. Additionally, leaving the hardest problems to the end will help prevent you from ending up in a time crunch.  
+If you can't figure out how to do a problem in ~3 minutes, skip it and come back to it later. You'd be shocked at how good your subconscious is at coming up with ideas while you're working on the other problems. Additionally, leaving the hardest problems to the end will help prevent you from ending up in a time crunch.
 
 When checking your work, begin by making *sanity checks*.  This means asking questions like "Does my answer have the right sign?" or "Does my answer seem unreasonably small or large?". You can also do these as you work. Certain types of problems can be solved *in reverse*. For example, if a question asks you to evaluate an integral, check that the derivative of your answer is the original function. If your solution looks correct both forwards and backwards, it is much more likely to be right. Other types of problems have multiple viable solutions. If you see an alternative way of solving a problem, try working through it. If you get the same answer using two different methods, your answer is much more likely to be right.
 

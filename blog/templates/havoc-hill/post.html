@@ -14,8 +14,8 @@ government or opposition, and the years they were active. Then, I used
 <a href="https://plotly.com/">plotly</a> to create some visualizations<a
 href="#fn2" class="footnote-ref" id="fnref2"
 role="doc-noteref"><sup>2</sup></a>. In this post, I’ll present <span
-class="math inline">\(8\)</span> simple charts that contain the results
-of this analysis. I hope you find it interesting!</p>
+class="math inline">8</span> simple charts that contain the results of
+this analysis. I hope you find it interesting!</p>
 <h2 id="part-1-making-the-bills">Part 1: Making the Bills</h2>
 <p>In the Canadian Parliament, a <em>bill</em> is a proposed law that is
 introduced for debate before becoming an official <em>act of
@@ -38,11 +38,11 @@ alt="Figure 1: Bills proposed by type and origin in the Canadian Parliament. The
 by type and origin in the Canadian Parliament. The vast majority of
 bills are proposed by private members in the House of Commons.
 Government bills are the second largest category, with <span
-class="math inline">\(1189\)</span> bills. Of the <span
-class="math inline">\(\approx 700\)</span> bills proposed in the Senate,
-only <span class="math inline">\(31\)</span> are private bills. Since
-MPs cannot propose private bills, private bills make up only <span
-class="math inline">\(\approx 0.5\%\)</span> of all bills.</figcaption>
+class="math inline">1189</span> bills. Of the <span
+class="math inline"> ≈ 700</span> bills proposed in the Senate, only
+<span class="math inline">31</span> are private bills. Since MPs cannot
+propose private bills, private bills make up only <span
+class="math inline"> ≈ 0.5%</span> of all bills.</figcaption>
 </figure>
 <p>Canada has three main political parties: the Liberals, the
 Conservatives, and the NDP. We also have some smaller parties, such as
@@ -74,11 +74,11 @@ analysis are shown in Figure 3.</p>
 alt="Figure 3: Unsurprisingly, the governing party tends to propose more bills than the official opposition, by a \approx 25\% margin. Honestly, this margin was smaller than I expected. With all the partisanship in today’s political climate, it is easy to feel like all the opposition does is complain, but this plot clearly disproves such feelings." />
 <figcaption aria-hidden="true"><strong>Figure 3</strong>:
 Unsurprisingly, the governing party tends to propose more bills than the
-official opposition, by a <span class="math inline">\(\approx
-25\%\)</span> margin. Honestly, this margin was smaller than I expected.
-With all the partisanship in today’s political climate, it is easy to
-feel like all the opposition does is complain, but this plot clearly
-disproves such feelings.</figcaption>
+official opposition, by a <span class="math inline"> ≈ 25%</span>
+margin. Honestly, this margin was smaller than I expected. With all the
+partisanship in today’s political climate, it is easy to feel like all
+the opposition does is complain, but this plot clearly disproves such
+feelings.</figcaption>
 </figure>
 <h2 id="part-2-reading-the-bills">Part 2: Reading the Bills</h2>
 <p>A productive government should ensure that all proposed bills are
@@ -86,12 +86,12 @@ read. Whether the government actually passes these bills is more
 nuanced, but at the very least I would hope the government is reading a
 couple of bills a day. So here’s another plot, which shows the average
 number of bill readings per day in the past <span
-class="math inline">\(17\)</span> sessions of the House of Commons. This
+class="math inline">17</span> sessions of the House of Commons. This
 statistic (and the similar statistic in Figure 8) uses the total number
 of days that the parliament was in session, not the number of days in
 which MPs actually met and read bills. Therefore, parliament probably
-reads <span class="math inline">\(\approx 50\%\)</span> more bills than
-Figure 4 suggests each time it sits.</p>
+reads <span class="math inline"> ≈ 50%</span> more bills than Figure 4
+suggests each time it sits.</p>
 <figure>
 <img src="/templates/havoc-hill/readings-per-day.png"
 alt="Figure 4: A plot of readings per day in all parliament sessions since 1994. Stephen Harper’s minority conservative government between 2007 and 2010 read the most bills. Justin Trudeau’s 2015 majority government and 2019 minority governments read far fewer bills per day." />
@@ -127,18 +127,17 @@ alt="Figure 6: The distribution of all deliberation times in the dataset. As men
 <figcaption aria-hidden="true"><strong>Figure 6</strong>: The
 distribution of all deliberation times in the dataset. As mentioned
 previously, many bills had deliberation times of <span
-class="math inline">\(&lt;50\)</span> days, since many bills fail. The
+class="math inline"> &lt; 50</span> days, since many bills fail. The
 vast majority of bills finish deliberation in <span
-class="math inline">\(&lt;300\)</span> days, although there are a
-handful of outliers with <span class="math inline">\(&gt;500\)</span>
-day deliberation times.</figcaption>
+class="math inline"> &lt; 300</span> days, although there are a handful
+of outliers with <span class="math inline"> &gt; 500</span> day
+deliberation times.</figcaption>
 </figure>
 <h2 id="part-3-passing-the-bills">Part 3: Passing the Bills</h2>
-<p>To become law, a bill must pass <span
-class="math inline">\(6\)</span> readings (<span
-class="math inline">\(3\)</span> in the House and <span
-class="math inline">\(3\)</span> in the Senate) and then receive
-<em>royal assent</em> from the <a
+<p>To become law, a bill must pass <span class="math inline">6</span>
+readings (<span class="math inline">3</span> in the House and <span
+class="math inline">3</span> in the Senate) and then receive <em>royal
+assent</em> from the <a
 href="https://en.wikipedia.org/wiki/Governor_General_of_Canada">governor
 general of Canada</a>. Royal assent is essentially a formality in
 Canada; even though the governor general has the power to strike down a
@@ -199,10 +198,10 @@ elected officials who sit in the House of Commons. Their role is roughly
 equivalent to American congressmen.<a href="#fnref4"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>I’m not kidding. This project is <span
-class="math inline">\(4\)</span> really long Jupyter notebooks. I’m not
-even sure if they work anymore, since I didn’t create a virtual
-environment and I have no idea which versions of Python, pandas, plotly,
-and BeautifulSoup4 I used. I swear I know better now.<a href="#fnref5"
+class="math inline">4</span> really long Jupyter notebooks. I’m not even
+sure if they work anymore, since I didn’t create a virtual environment
+and I have no idea which versions of Python, pandas, plotly, and
+BeautifulSoup4 I used. I swear I know better now.<a href="#fnref5"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>

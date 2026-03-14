@@ -16,7 +16,7 @@ To create a callout, add the following block of CSS code to `callouts.css`:
 
 ```css
 .callout[data-callout="NAME"] {
-  /* 
+  /*
     Add CSS attributes to your callout here.
     These can include background colours, borders,
     padding, and anything else your heart desires!

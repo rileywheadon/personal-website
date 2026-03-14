@@ -52,7 +52,7 @@ Finally, I investigated how many bills were *passed* per day in each session of 
 
 ## Conclusion
 
-I did a lot of analysis by political party in this blog post. This should go without saying, but *the number of bills read/passed/proposed by a political party should not be taken as a measure of how good (or bad) the party is*. 
+I did a lot of analysis by political party in this blog post. This should go without saying, but *the number of bills read/passed/proposed by a political party should not be taken as a measure of how good (or bad) the party is*.
 
 With that out of the way, thanks for reading!
 

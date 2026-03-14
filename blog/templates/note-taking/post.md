@@ -89,7 +89,7 @@ The [Obsidian Linter](https://github.com/platers/obsidian-linter) plugin ensures
 
 The [Pandoc](https://pandoc.org/) CLI application has grown to be an *extremely* important part of my workflow. It allows me to export markdown files from my Obsidian vault to almost any other file type. I find this to be particularly useful when typesetting mathematics since the document formatting syntax in $\LaTeX$ is just awful. I've used Pandoc to produce research reports, assignments, and presentations using [Beamer](https://www.overleaf.com/learn/latex/Beamer). Of course, Pandoc trades control over document formatting for writing speed. Personally, this is a sacrifice I'm willing to make. But if you need to create professional documents, exporting markdown files via Pandoc probably won't provide enough capabilities.
 
-*Update* (10/29/24): Exporting markdown files to PDF proved to be too cumbersome, so I am back to using $\LaTeX$ for more formal writing. 
+*Update* (10/29/24): Exporting markdown files to PDF proved to be too cumbersome, so I am back to using $\LaTeX$ for more formal writing.
 
 **Quartz**
 
