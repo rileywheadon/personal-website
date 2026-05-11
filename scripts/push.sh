@@ -4,4 +4,6 @@ set -e -o pipefail
 ./scripts/compile.sh
 echo ""
 
-jj git push
+jj bookmark set master
+jj git push --remote=prod
+jj git push --remote=origin
