@@ -5,16 +5,16 @@ My LinkedIn can be found [here](https://linkedin.com/in/riley-wheadon-91b639354)
 ## Education
 
 **University of British Columbia** - *B.Sc. Mathematics, Minor in Statistics* \
-September 2022 - April 2027
+September 2022 - December 2026
 
 - Cumulative Average: 94.4%
 - Selected Courses:
-	- CPSC 221 - Data Structures & Algorithms (A+)
-	- MATH 223 - Honours Linear Algebra (A+)
-	- MATH 302 - Probability (A+)
-    - MATH 303 - Stochastic Processes (A+)
-	- MATH 316 - Partial Differential Equations (A+)
-	- STAT 305 - Statistical Inference (A+)
+  - CPSC 221 - Data Structures & Algorithms (A+)
+  - MATH 223 - Honours Linear Algebra (A+)
+  - MATH 302 - Probability (A+)
+  - MATH 303 - Stochastic Processes (A+)
+  - MATH 316 - Partial Differential Equations (A+)
+  - STAT 305 - Statistical Inference (A+)
 
 **Westmount Charter School** - *High School Diploma* \
 September 2019 - June 2022
@@ -24,10 +24,11 @@ September 2019 - June 2022
 
 ## Experience
 
-**SAP Canada** - *CI/CD Intern* \
+**SAP Canada** - *Agile Developer Intern* \
 September 2025 - Present
 
-- Building and maintaining enterprise-scale CI/CD pipelines for SAP Analytics Cloud.
+- Building continuous delivery infrastructure for SAP Business Data Cloud.
+- Technologies: Jenkins, Kubernetes, Crossplane, OCM, FluxCD, Helm.
 
 **University of Calgary** - *Research Software Engineer* \
 May 2025 - August 2025
@@ -53,7 +54,7 @@ April 2024 - December 2024
 - Won 1st prize at the 2025 Multidisciplinary Undergraduate Research Conference (MURC).
 - Authored a manuscript detailing my findings.
 
-**University of Calgary** - *Summer Camp Counsellor*	\
+**University of Calgary** - *Summer Camp Counsellor*  \
 April 2023 - August 2023
 
 - Designed a one-week curriculum on game development for campers aged 9–12.

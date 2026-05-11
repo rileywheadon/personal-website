@@ -1,9 +1,9 @@
 ## About Me
 
-I'm Riley, a fourth year undergraduate student studying mathematics and statistics at the University of British Columbia.
+I'm Riley, a fifth year undergraduate student studying mathematics and statistics at the University of British Columbia.
 In addition to my studies, I'm passionate about Unix, Vim, and software engineering.
 I also enjoy running, reading, [hiking](/hiking), and playing the piano.
-I am currently working at [SAP Canada](https://www.sap.com/canada/index.html) as a CI/CD intern until April 2026.
+I am currently interning at [SAP Canada](https://www.sap.com/canada/index.html) until September 2026.
 
 From May to August 2025, I worked with [Dr. Cuauhtémoc T. Vidrio Sahagún](https://profiles.ucalgary.ca/cuauhtemoc-t-vidrio-sahagun) and [Dr. Alain Pietroniro](https://profiles.ucalgary.ca/alain-pietroniro) to implement a [Flood Frequency Analysis Framework](https://www.sciencedirect.com/science/article/pii/S136481522400001X) in the R programming language.
 Documentation for the software I created can be found [here](https://rileywheadon.github.io/ffa-framework/).
