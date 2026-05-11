@@ -1,0 +1,8 @@
+title; Markdown & Math in Neovim
+created; 2026/05/11
+audience; Neovim users interested in editing Markdown.
+certainty; Likely
+importance; Medium
+status; Ongoing
+tags; Neovim, Markdown, University
+math; True

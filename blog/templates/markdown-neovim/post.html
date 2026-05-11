@@ -1,0 +1,185 @@
+<p>I’ve recently started doing all my development work and note-taking
+in Neovim. It’s been great so far, but I’ve really missed my setup for
+<a href="/fast-typesetting">Fast Typesetting in Markdown with Obsidian
+LaTeX Suite</a>. With summer classes starting today, I decided to stop
+procrastinating and finally get my snippets up and running in Neovim.
+But the process wasn’t as easy as I hoped. In this blog post, I’ll give
+a brief overview of the problems I faced and how I eventually overcame
+them.</p>
+<h2 id="introduction">Introduction</h2>
+<p>I take all of my course notes in Markdown. I’m a mathematics major,
+so these notes contain a lot of formulas and equations. To typeset these
+equations, I inline <a href="https://www.latex-project.org/">LaTeX</a>
+into my Markdown files. In the raw Markdown text files, equations look
+like this:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>5x^2 + 3x + \int_{0}^{\infty} \frac{1}{x}\,dx</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>$$</span></code></pre></div>
+<p>But when rendered, the equations look like this:</p>
+<p><span class="math display">$$
+5x^2 + 3x + \int_{0}^{\infty} \frac{1}{x}\,dx
+$$</span></p>
+<p>Inlining LaTeX in Markdown has a lot of advantages. First, Markdown
+is much more pleasant to write than LaTeX. So, by using LaTeX in
+Markdown (instead of straight LaTeX) you get the lightweight headers,
+styles and code blocks from Markdown instead of their heavier LaTeX
+equivalents. Markdown is also widely used by static site generators,
+GitHub, and communication tools (e.g. Slack, Discord), so using Markdown
+makes it easy to share work.</p>
+<p>But a LaTeX in Markdown setup also comes with a lot of technical
+challenges:</p>
+<ol class="incremental" type="1">
+<li>The user needs a way to preview the rendered equations.</li>
+<li>Special syntax highlighting rules must be set up for inline LaTeX
+code.</li>
+<li>Snippets (like <a href="/fast-typesetting">these ones</a> I set up
+in Obsidian) need to be aware of when the user is editing regular
+Markdown text and when the user is editing LaTeX in Markdown.</li>
+</ol>
+<h2 id="part-1-previewing">Part 1: Previewing</h2>
+<p>I am using <a
+href="https://github.com/selimacerbas/markdown-preview.nvim">selimacerbas/markdown-preview.nvim</a>
+with the default configuration to render Markdown and LaTeX in my
+browser. I prefer this plugin to the other Markdown preview plugins
+because it doesn’t require any external dependencies like NodeJS.</p>
+<h2 id="part-2-syntax-highlighting">Part 2: Syntax Highlighting</h2>
+<p>Unlike Vim, Neovim has <a
+href="https://neovim.io/doc/user/treesitter/">built-in support for
+treesitter</a>. However, we still need a way to manage which treesitter
+parsers are installed and a way to enable/disable them. For this, I use
+<a
+href="https://github.com/romus204/tree-sitter-manager.nvim">romus204/tree-sitter-manager.nvim</a>.
+I’ve configured <code>&lt;leader&gt;tm</code> to open the TUI using the
+following Lua code:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode lua"><code class="sourceCode lua"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">vim</span><span class="op">.</span><span class="va">keymap</span><span class="op">.</span>set<span class="op">(</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;n&quot;</span><span class="op">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;&lt;leader&gt;tm&quot;</span><span class="op">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;:TSManager&lt;CR&gt;&quot;</span><span class="op">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span> <span class="va">desc</span> <span class="op">=</span> <span class="st">&quot;Open tree-sitter-manager&quot;</span> <span class="op">}</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="op">)</span></span></code></pre></div>
+<p>In order to get proper syntax highlighting for both Markdown and
+inline LaTeX, the treesitter grammars for both Markdown and LaTeX must
+be installed. While this could be done through the tree-sitter-manager
+TUI, I have opted to configure tree-sitter-manager to guarantee that the
+Markdown and latex parsers are installed:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode lua"><code class="sourceCode lua"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span><span class="op">(</span><span class="st">&quot;tree-sitter-manager&quot;</span><span class="op">).</span>setup<span class="op">({</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="va">ensure_installed</span> <span class="op">=</span> <span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;markdown&quot;</span><span class="op">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;latex&quot;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">})</span></span></code></pre></div>
+<p>In order to confirm that both treesitter grammars are working, you
+can open a new Markdown file and add inline LaTeX
+(e.g. <code>$x^2$</code>). Then, run <code>:InspectTree</code>. If the
+LaTeX parser is working, you should see a node called
+<code>inline_formula</code>.</p>
+<h2 id="part-3-snippets">Part 3: Snippets</h2>
+<p>A snippet is simply a sequence of keystrokes that is automatically
+expanded by Neovim. For example, when I type <code>int</code> (as in
+“integral”) within a LaTeX block, I have a snippet to insert the full
+LaTeX integral command with bounds:
+<code>\int_{&lt;&gt;}^{&lt;&gt;} &lt;&gt;</code>. The
+<code>&lt;&gt;</code> characters are tabstops – when I press tab, Neovim
+moves my cursor to the next tabstop.</p>
+<p>I use <a
+href="https://github.com/L3MON4D3/LuaSnip">L3MON4D3/LuaSnip</a> to
+manage my snippets (<a
+href="https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md">documentation</a>).
+This plugin is very powerful, but more complicated than a plugin like <a
+href="https://github.com/SirVer/ultisnips">SirVer/UltiSnips</a>, which
+defines snippets using simple <code>.snippets</code> files. The snippet
+engine (LuaSnip or UltiSnips) also needs a completion engine. I’ve been
+using <a href="https://github.com/Saghen/blink.cmp">Saghen/blink.cmp</a>
+with the default configuration.</p>
+<h3 id="detecting-math-mode">Detecting Math Mode</h3>
+<p>When I’m editing Markdown, I only want my math-related snippets to
+activate when I’m editing LaTeX. This is especially important because I
+make extensive use of LuaSnip’s autosnippets feature, which expands
+snippets immediately after the trigger is typed. So, if I didn’t have a
+mechanism to conditionally expand snippets, the text
+<code>\int_{}^{}</code> would be added to my prose every time I typed a
+word starting with “int”, for example.</p>
+<p>To check if I’m in a LaTeX block, I use the following Lua
+function:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode lua"><code class="sourceCode lua"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="kw">function</span> in_math<span class="op">()</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">-- Get the treesitter node under the cursor</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">node</span> <span class="op">=</span> <span class="va">vim</span><span class="op">.</span><span class="va">treesitter</span><span class="op">.</span>get_node<span class="op">({</span><span class="va">ignore_injections</span> <span class="op">=</span> <span class="kw">false</span><span class="op">})</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="kw">not</span> <span class="va">node</span> <span class="cf">then</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="kw">false</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">-- This is a recursive function that traverses up through the AST</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> <span class="va">node</span> <span class="cf">do</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">local</span> <span class="va">t</span> <span class="op">=</span> <span class="va">node</span><span class="op">:</span><span class="fu">type</span><span class="op">()</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">-- The node type inline_formula means we are in inline LaTeX ($...$)</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">-- The node type displayed_equation means we are in display LaTeX ($$...$$)</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="va">t</span> <span class="op">==</span> <span class="st">&quot;inline_formula&quot;</span> <span class="kw">or</span> <span class="va">t</span> <span class="op">==</span> <span class="st">&quot;displayed_equation&quot;</span> <span class="cf">then</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="kw">true</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">-- The text_mode node type means we are inside LaTeX but inside a \text{}</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="co">-- tag. We want to be able to type freely, so we disable snippets</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="va">t</span> <span class="op">==</span> <span class="st">&quot;text_mode&quot;</span> <span class="cf">then</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="kw">false</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="va">node</span> <span class="op">=</span> <span class="va">node</span><span class="op">:</span>parent<span class="op">()</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">false</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div>
+<h3 id="shorthand-for-simpler-snippets">Shorthand for Simpler
+Snippets</h3>
+<p>Another thing that I’ve noticed about the LuaSnip syntax is that it
+tends to be quite verbose. For my needs, I just need to define the
+snippet trigger, the tabstops, and in exceptional cases, the snippet
+priority (so that if one snippet is a substring of another, I can
+control which one activates). To help make my snippet writing experience
+more straightforward, I wrote three helper functions: <code>_m</code>
+(math-mode autosnippet), <code>_a</code> (autosnippet), and
+<code>_r</code> (regular snippet).</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode lua"><code class="sourceCode lua"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="kw">function</span> md_snippet<span class="op">(</span><span class="va">trig</span><span class="op">,</span> <span class="fu">type</span><span class="op">,</span> <span class="va">str</span><span class="op">,</span> <span class="va">ins</span><span class="op">,</span> <span class="va">cond</span><span class="op">,</span> <span class="va">prio</span><span class="op">)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">prio</span> <span class="op">=</span> <span class="va">prio</span> <span class="kw">or</span> <span class="dv">0</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">nodes</span> <span class="op">=</span> <span class="op">{}</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="va">idx</span><span class="op">,</span> <span class="va">val</span> <span class="kw">in</span> <span class="fu">ipairs</span><span class="op">(</span><span class="va">ins</span><span class="op">)</span> <span class="cf">do</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">nodes</span><span class="op">[</span><span class="va">idx</span><span class="op">]</span> <span class="op">=</span> i<span class="op">(</span><span class="va">val</span><span class="op">,</span> <span class="st">&quot;&quot;</span><span class="op">)</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="va">opts</span> <span class="op">=</span> <span class="op">{</span> <span class="va">trig</span> <span class="op">=</span> <span class="va">trig</span><span class="op">,</span> <span class="va">snippetType</span> <span class="op">=</span> <span class="fu">type</span><span class="op">,</span> <span class="va">wordTrig</span> <span class="op">=</span> <span class="kw">false</span><span class="op">,</span> <span class="va">priority</span> <span class="op">=</span> <span class="va">prio</span> <span class="op">}</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> s<span class="op">(</span><span class="va">opts</span><span class="op">,</span> fmta<span class="op">(</span><span class="va">str</span><span class="op">,</span> <span class="va">nodes</span><span class="op">),</span> <span class="va">cond</span><span class="op">)</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="kw">function</span> _m<span class="op">(</span><span class="va">trig</span><span class="op">,</span> <span class="va">str</span><span class="op">,</span> <span class="va">ins</span><span class="op">,</span> <span class="va">prio</span><span class="op">)</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> md_snippet<span class="op">(</span><span class="va">trig</span><span class="op">,</span> <span class="st">&quot;autosnippet&quot;</span><span class="op">,</span> <span class="va">str</span><span class="op">,</span> <span class="va">ins</span><span class="op">,</span> <span class="op">{</span> <span class="va">condition</span> <span class="op">=</span> <span class="va">in_math</span> <span class="op">},</span> <span class="va">prio</span><span class="op">)</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="kw">function</span> _a<span class="op">(</span><span class="va">trig</span><span class="op">,</span> <span class="va">str</span><span class="op">,</span> <span class="va">ins</span><span class="op">)</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> md_snippet<span class="op">(</span><span class="va">trig</span><span class="op">,</span> <span class="st">&quot;autosnippet&quot;</span><span class="op">,</span> <span class="va">str</span><span class="op">,</span> <span class="va">ins</span><span class="op">,</span> <span class="op">{})</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="kw">function</span> _r<span class="op">(</span><span class="va">trig</span><span class="op">,</span> <span class="va">str</span><span class="op">,</span> <span class="va">ins</span><span class="op">)</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> md_snippet<span class="op">(</span><span class="va">trig</span><span class="op">,</span> <span class="st">&quot;snippet&quot;</span><span class="op">,</span> <span class="va">str</span><span class="op">,</span> <span class="va">ins</span><span class="op">,</span> <span class="op">{})</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div>
+<p>These helper functions make my snippet definitions much more concise.
+For example,</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode lua"><code class="sourceCode lua"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- create a markdown table</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>_r<span class="op">(</span><span class="st">&quot;table&quot;</span><span class="op">,</span> <span class="st">&quot;| &lt;&gt; | &lt;&gt; |</span><span class="sc">\n</span><span class="st">|--|--|</span><span class="sc">\n</span><span class="st">| &lt;&gt; | &lt;&gt; |&quot;</span><span class="op">,</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">}),</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- automatically expand a display math environment</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>_a<span class="op">(</span><span class="st">&quot;dm&quot;</span><span class="op">,</span> <span class="st">&quot;$$</span><span class="sc">\n</span><span class="st">&lt;&gt;</span><span class="sc">\n</span><span class="st">$$</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> <span class="op">{</span><span class="dv">1</span><span class="op">}),</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">-- write an integral</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>_m<span class="op">(</span><span class="st">&quot;int&quot;</span><span class="op">,</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">int_{&lt;&gt;}^{&lt;&gt;} &lt;&gt;</span><span class="sc">\\</span><span class="st">,d&quot;</span><span class="op">,</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">}),</span></span></code></pre></div>
+<h2 id="conclusion">Conclusion</h2>
+<p>I hope you found this interesting and helpful! See my <a
+href="https://github.com/rileywheadon/dotfiles">dotfiles</a> for the
+complete setup.</p>
