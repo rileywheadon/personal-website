@@ -46,9 +46,3 @@ Build the website in `/site`.
 - The default Jinja template also contains a navbar and footer
 - Write another template for automatically adding the metadata element
 - Write another template for adding comments on the bottom of posts/projects
-
-Hosting:
-
-- Use https://nginx.org/en/ and https://docs.gunicorn.org/en/latest/index.html
-- Deploy to a DigitalOcean droplet with the cheapest plan (\$4/month)
-

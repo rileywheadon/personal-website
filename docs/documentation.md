@@ -12,6 +12,8 @@
 
 ## Configuring `nginx`
 
+**Warning**: This documentation is outdated as I am using Docker now.
+
 First, create an `nginx` configuration in `/etc/nginx/sites-available/`:
 
 ```
