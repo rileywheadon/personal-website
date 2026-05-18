@@ -9,7 +9,7 @@ From May to August 2025, I worked with [Dr. Cuauhtémoc T. Vidrio Sahagún](http
 Documentation for the software I created can be found [here](https://rileywheadon.github.io/ffa-framework/).
 Before this, I spent a year doing research in mathematical biology.
 From April to December 2024, I worked with [Dr. Eric Cytrynbaum](https://personal.math.ubc.ca/~cytryn/index.shtml) to develop a mathematical model of root growth in *A. Thaliana*.
-An up-to-date copy of our manuscript can be found [here](https://github.com/rileywheadon/root-modelling/blob/master/paper/main.pdf) and the code for the project can be found [here](https://github.com/rileywheadon/clasp-model).
+An up-to-date copy of our manuscript can be found [here](https://github.com/rileywheadon/clasp-model-paper/blob/master/main.pdf) and the code for the project can be found [here](https://github.com/rileywheadon/clasp-model).
 I also took MATH 462 (Projects in Mathematical Biology), a graduate-level mathematical modelling course at UBC.
 For the final project, my group and I explored models of the [Notch signalling pathway](https://en.wikipedia.org/wiki/Notch_signaling_pathway).
 I wrote a brief summary of our work [here](/delta-notch).

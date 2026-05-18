@@ -4,6 +4,13 @@ set -e -o pipefail
 ./scripts/compile.sh
 echo ""
 
+echo "Running tests.."
+python3 app.py &> /dev/null &
+python3 tests/links.py
+python3 tests/metadata.py
+kill %
+echo ""
+
 jj bookmark set master > /dev/null 2>&1
 jj git push --remote=origin > /dev/null 2>&1
 
