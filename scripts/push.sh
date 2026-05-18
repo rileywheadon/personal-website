@@ -10,3 +10,9 @@ jj git push --remote=origin > /dev/null 2>&1
 echo "Building and pushing Docker image..."
 docker build -t rileywheadon/personal-website:latest .
 docker push rileywheadon/personal-website:latest
+echo ""
+
+# TODO: Replace this with something more robust
+echo "Redeploying the application..."
+cd ../personal-platform
+./deploy.sh
