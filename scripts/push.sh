@@ -7,3 +7,6 @@ echo ""
 jj bookmark set master
 jj git push --remote=prod
 jj git push --remote=origin
+
+docker build -t rileywheadon/personal-website:latest .
+docker push rileywheadon/personal-website:latest
