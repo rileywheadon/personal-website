@@ -6,6 +6,6 @@ set -e -o pipefail
 jj bookmark set master > /dev/null 2>&1
 jj git push --remote=origin > /dev/null 2>&1
 
-echo "Building and pushing Docker image..."
+echo "\nBuilding and pushing Docker image..."
 docker build -t rileywheadon/personal-website:latest .
 docker push rileywheadon/personal-website:latest
