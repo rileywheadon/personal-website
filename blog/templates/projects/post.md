@@ -1,6 +1,6 @@
 ## FFA Framework
 
-_May 2025 - Present_
+_May 2025 - September 2025_
 
 An [R package](https://cran.r-project.org/web/packages/ffaframework/index.html) and [web application](https://ffaframework.ca) for flood frequency analysis (FFA) based on [this](https://doi.org/10.1016/j.envsoft.2024.105940) paper.
 Supervised by [Dr. Cuauhtémoc T. Vidrio Sahagún](https://sites.google.com/view/hewsl/) and Dr. Alain Pietroniro.
